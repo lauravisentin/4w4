@@ -1,0 +1,51 @@
+*{
+    margin : 0;
+    box-sizing: border-box;
+}
+.global {
+    max-width: 1000px;
+ }
+ 
+ .hero{
+     min-height: 100vh;
+     background-image: url("images/background_MondoVoyage.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+
+     .hero__contenu {
+        padding-top:10vh;
+        margin-left:3vw;
+        height:50vh;
+
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .hero__description{
+            max-width:400px;
+            margin-left: 0;
+        }
+        .hero__courriel{
+            text-decoration: none;
+            color:black;
+            margin-left: 0;
+        }
+
+        .hero__bouton{
+            width:150px;
+            border-radius:5px;
+            border:none;
+            background-color:rgb(112, 232, 196);
+            padding:3px;
+            text-transform:uppercase;
+            
+        }
+
+        .hero__icone-app{
+            padding-top:20px;
+        }
+
+     }
+ }
+

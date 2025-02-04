@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* /////////////////////// */
+/*
+Theme Name: 4W4 - Laura Visentin
+Theme URI: https://referenced.ca/
+Author: Laura Visentin
+Author URI: https://github.com/lauravisentin
+Description: Thème de base développé dans le cadre du cours 4w4
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 4W4-Laura
+*/
+/* ///////////////////////
+Les Variables 
+/////////////////////// */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Liter&display=swap");
+.liter-regular {
+  font-family: "Liter", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "Liter", serif;
+}
+
+/* ///////////////////////
+Les composants 
+/////////////////////// */
+/* /////////////////////////////////////////// menu principal */
+.menu {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@media screen and (max-width: 700px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+.menu__a {
+  color: #333;
+  text-decoration: none;
+  padding: 2px 5px;
+}
+
+/* *******************
+Le composant .carte
+********************** */
+.carte {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+.carte--grande {
+  padding: 40px;
+}
+.carte--petite {
+  padding: 20px;
+}
+.carte__image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.carte__contenu {
+  margin-top: 15px;
+}
+.carte__titre {
+  font-size: 24px;
+  color: #333;
+}
+.carte__description {
+  font-size: 16px;
+  color: #666;
+}
+.carte__bouton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.carte__bouton--actif {
+  background-color: #0056b3;
+}
+.carte__bouton:hover {
+  background-color: #0056b3;
+}
+
+.recherche {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.recherche__input {
+  flex: 1;
+  height: 1.8rem;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-right: 1px dotted rgba(0, 0, 0, 0.2);
+}
+.recherche__input:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+.recherche__img {
+  flex: 0 0 20px;
+  padding: 0 3px;
+}
+
+.inscription {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inscription__barre {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 60vw;
+}
+
+.inscription__conteneurs {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.inscription label {
+  font-size: 14px;
+  color: #333;
+}
+
+.inscription input {
+  border: 1px solid #00a7d0;
+  padding: 8px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.inscription button {
+  background-color: white;
+  border: 1px solid #00a7d0;
+  padding: 8px 15px;
+  color: #00a7d0;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.3s;
+  height: 38px;
+  margin-top: 16px;
+}
+
+.inscription button:hover {
+  background-color: #00a7d0;
+  color: white;
+}
+
+/* ///////////////////////
+Les composants 
+/////////////////////// */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.global {
+  max-width: 1000px;
+}
+
+.hero {
+  min-height: 100vh;
+  background-image: url("images/background_MondoVoyage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero .hero__contenu {
+  padding-top: 10vh;
+  margin-left: 3vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.hero .hero__contenu .hero__description {
+  max-width: 400px;
+  margin-left: 0;
+}
+.hero .hero__contenu .hero__courriel {
+  text-decoration: none;
+  color: black;
+  margin-left: 0;
+}
+.hero .hero__contenu .hero__bouton {
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(112, 232, 196);
+  padding: 3px;
+  text-transform: uppercase;
+}
+.hero .hero__contenu .hero__icone-app {
+  padding-top: 20px;
+}
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+.entete__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0 40px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 700px) {
+  .entete__nav {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=style.css.map */

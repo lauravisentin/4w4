@@ -1,0 +1,39 @@
+/* /////////////////////// */
+/*
+Theme Name: 4W4 - Laura Visentin
+Theme URI: https://referenced.ca/
+Author: Laura Visentin
+Author URI: https://github.com/lauravisentin
+Description: Thème de base développé dans le cadre du cours 4w4
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 4W4-Laura
+*/
+
+/* ///////////////////////
+Les Variables 
+/////////////////////// */
+@import "variables/couleurs";
+@import "variables/dimensions";
+@import "variables/polices";
+/* ///////////////////////
+Les composants 
+/////////////////////// */
+@import "composants/menu";
+@import "composants/carte";
+@import "composants/recherche";
+@import "composants/inscription";
+
+
+
+/* ///////////////////////
+Les composants 
+/////////////////////// */
+@import "layout/principal";
+@import "layout/entete";
+@import "layout/footer";
+
+
