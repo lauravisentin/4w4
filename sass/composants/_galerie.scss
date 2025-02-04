@@ -1,0 +1,25 @@
+.galerie {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.galerie__titre {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color:red;
+}
+
+.galerie__paysages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
+    grid-template-rows: repeat(2, 1fr); /* 2 rangées */
+    gap: 10px; /* Espacement entre les images */
+}
+
+.galerie__paysages img {
+    width: 20%;
+    height: 20%;
+    // object-fit: cover;
+    border-radius: 5px;
+}
