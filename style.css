@@ -101,6 +101,11 @@ Le composant .carte
   font-size: 1.2rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+@media screen and (max-width: 700px) {
+  .recherche {
+    display: none;
+  }
+}
 .recherche__input {
   flex: 1;
   height: 1.8rem;
@@ -118,42 +123,56 @@ Le composant .carte
 }
 
 .inscription {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  font-size: 1rem;
 }
-
+@media screen and (max-width: 700px) {
+  .inscription {
+    display: none;
+  }
+}
 .inscription__barre {
   background-color: white;
   padding: 20px;
   display: flex;
-  gap: 10px;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  min-width: 60vw;
+  width: 60%;
 }
-
 .inscription__conteneurs {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  min-width: 100px;
+  gap: 10px;
+  padding-right: 20px;
 }
-
+.inscription__groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
 .inscription label {
   font-size: 14px;
   color: #333;
 }
-
 .inscription input {
   border: 1px solid #00a7d0;
   padding: 8px;
   border-radius: 3px;
   outline: none;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.02);
 }
-
+.inscription input:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
 .inscription button {
   background-color: white;
   border: 1px solid #00a7d0;
@@ -163,10 +182,9 @@ Le composant .carte
   cursor: pointer;
   border-radius: 3px;
   transition: 0.3s;
-  height: 38px;
+  min-width: 100px;
   margin-top: 16px;
 }
-
 .inscription button:hover {
   background-color: #00a7d0;
   color: white;
@@ -255,8 +273,22 @@ Les composants
   align-items: center;
   text-transform: uppercase;
 }
-.entete .entete__logo {
+@media screen and (max-width: 700px) {
+  .entete {
+    width: 100%;
+    background-color: beige;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: normal;
+  }
+}
+.entete__logo {
   padding: 1vw;
+}
+@media screen and (max-width: 700px) {
+  .entete__logo {
+    z-index: 1000;
+  }
 }
 .entete__nav {
   display: flex;
@@ -267,6 +299,52 @@ Les composants
 }
 @media screen and (max-width: 700px) {
   .entete__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 70vh;
+    background-color: beige;
+    display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+.entete .menu-toggle {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .entete .menu-toggle:checked ~ .entete__nav {
+    display: flex;
+  }
+}
+.entete__burger {
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .entete__burger {
+    display: block;
+    z-index: 1000;
+  }
+}
+@media screen and (max-width: 700px) {
+  .entete .menu {
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 15vh;
+  }
+}
+@media screen and (max-width: 700px) {
+  .entete .menu li {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .entete__recherche {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
