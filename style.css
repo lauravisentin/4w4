@@ -271,74 +271,56 @@ Les composants
 
 .entete {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
 }
-.entete__logo {
-  padding: 1vw;
-}
-.entete__nav {
-  display: flex;
+.entete__navigation {
+  width: auto;
+  position: static;
   flex-direction: row;
-  align-items: center;
-  gap: 0 40px;
-  flex-wrap: wrap;
-}
-.entete .menu-toggle {
-  display: none;
-}
-.entete .menu-toggle:checked ~ .entete__nav {
+  background-color: transparent;
   display: flex;
+  align-items: center;
 }
-.entete__burger {
-  cursor: pointer;
-  display: none;
-}
-.entete .menu li {
-  padding: 10px;
-}
-.entete__recherche {
-  display: block;
-}
-@media screen and (max-width: 700px) {
-  .entete {
-    width: 100%;
-    background-color: beige;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: normal;
-  }
-  .entete__logo {
-    z-index: 1000;
-  }
-  .entete__nav {
+@media screen and (max-width: 800px) {
+  .entete__navigation {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    flex-direction: column;
     width: 100vw;
-    height: 70vh;
-    background-color: beige;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
   }
-  .entete .menu-toggle:checked ~ .entete__nav {
-    display: flex;
-  }
-  .entete__burger {
-    display: block;
-    z-index: 1000;
-  }
-  .entete .menu {
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-around;
-    margin-top: 15vh;
-  }
-  .entete__recherche {
-    display: none;
-  }
+}
+
+/*
+  --------------------------------- Layout du pied de page
+*/
+footer {
+  background-color: rgb(236, 136, 13);
+  color: #000;
+}
+
+.piedpage {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.piedpage__s1__externe {
+  flex: 0 0 20%;
+}
+.piedpage__s1__externe .menu {
+  display: flex;
+  flex-direction: column;
+}
+.piedpage__s1__adresse {
+  flex: 0 0 40%;
+}
+.piedpage__s1__description {
+  flex: 1 0 400px;
 }/*# sourceMappingURL=style.css.map */
