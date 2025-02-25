@@ -41,12 +41,25 @@
         </div>
     </section>
     <section class="populaire">
-        <div class="global">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); 
-            if (in_category("galerie"))  {
+        <div class="boiteflex global">
+            <?php if (have_posts()) : while (have_posts()) : the_post();
+            if (in_category("Galerie"))  {
                 the_content() ;
             } else {    ?>
-                <?php get_template_part( 'gabarits/carte' ); ?>
+            <article class="carte carte--grande">
+                <figure class="carte__image">
+                    <img src="images/1.jpg" alt="">
+                </figure>
+                <div class="carte__contenu">
+                    <?php
+                    if(has_post_thumbnail()) {
+                        the_post_thumbnail('thumbnail');
+                    } ?>
+                    <h2 class="carte__titre"><?php the_title(); ?></h2>
+                    <p class="carte__description"><?php echo wp_trim_words(get_the_excerpt(), 20, "..."); ?></p>
+                    <a class="carte__bouton carte__bouton--actif" href="<?php the_permalink(); ?>">Suite</a>
+                </div>
+            </article>
             <?php } ?>
             <?php endwhile; endif; ?>
         </div>
