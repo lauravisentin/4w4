@@ -11,8 +11,8 @@
 <body>
 <header>
         <div class="entete">
-        <figure class="entete__logo">
-                <img src="<?php echo get_template_directory_uri() . '/images/logo.png' ?>" alt="logo voyage">
+            <figure class="entete__logo">
+                <?php echo get_custom_logo()?>
             </figure>
             <div class="entete__navigation">
                 <?php wp_nav_menu(array(

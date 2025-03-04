@@ -31,10 +31,16 @@ Les composants
 
 
 /* ///////////////////////
-Les composants 
+Les layouts 
 /////////////////////// */
 @import "layout/principal";
 @import "layout/entete";
 @import "layout/footer";
+
+/* ///////////////////////
+Les bases 
+/////////////////////// */
+@import "base/liens";
+@import "base/simple";
 
 

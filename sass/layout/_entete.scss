@@ -1,28 +1,72 @@
-.entete{
+// Assurez-vous que cette variable est définie quelque part dans votre SCSS
+$point__rupture: 700px;
+
+.chk__burger {
+    display: none;
+}
+
+.chk__burger + label {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#chk__burger {
+    display: none;
+}
+
+@media screen and (max-width: $point__rupture) {
+    .chk__burger  {
+        display: block;
+    }
+}
+
+.entete__nav {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.chk__burger:checked ~ .entete__nav {
+    display: flex;
+}
+
+.menu__a {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.entete {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__navigation {
-        @media screen and (max-width: 800px) {
-            position : absolute;
-            top:0;
-            right:0;
-            background-color: #fff;
-            padding : 20px;
-            flex-direction: column; 
-            width : 100vw;
-        }
-        width : auto;
-        position : static;
-        flex-direction: row; 
-        background-color: transparent;
 
-
-
-
+    &__nav {
         display: flex;
-        
+        justify-content: space-between;
         align-items: center;
-                                                                   
+        flex-direction: row;
+        gap: 0 40px;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: $point__rupture) {
+            display: none;
+            flex-direction: column;
+            height: 40vh;
+            width: 100vw;
+            padding-bottom: 20px;
+            gap: 30px 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: white;
+        }
     }
 }
+
+

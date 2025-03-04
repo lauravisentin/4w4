@@ -27,6 +27,19 @@ Les Variables
   font-family: "Liter", serif;
 }
 
+a {
+  color: rgb(9, 20, 74);
+  text-decoration: none;
+}
+a:hover {
+  color: rgba(0, 0, 0, 0.1);
+}
+a:visited {
+  color: rgba(0, 0, 0, 0.3);
+}
+a:focus {
+  color: rgba(0, 0, 0, 0.4);
+}
 /* ///////////////////////
 Les composants 
 /////////////////////// */
@@ -51,8 +64,25 @@ Les composants
 @media screen and (max-width: 700px) {
   .menu {
     flex-direction: column;
+    gap: 6px 0px;
+  }
+  .recherche {
+    display: none;
+  }
+
+  .inscription {
+    display: none;
+  }
+
+  .chk__burger {
+    display: block;
   }
 }
+
+.menu__a {
+  padding: 2px 5px;
+}
+
 
 /* /////////////////////////////////////////// menu principal */
 /* *******************
@@ -62,6 +92,7 @@ Le composant .carte
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
+  flex: 1 1 220px;
 }
 .carte--grande {
   padding: 40px;
@@ -120,11 +151,6 @@ Le composant .carte
   flex: 0 0 20px;
   padding: 0 3px;
 }
-@media screen and (max-width: 700px) {
-  .recherche {
-    display: none;
-  }
-}
 
 .inscription {
   display: flex;
@@ -133,11 +159,7 @@ Le composant .carte
   width: 100%;
   font-size: 1rem;
 }
-@media screen and (max-width: 700px) {
-  .inscription {
-    display: none;
-  }
-}
+
 .inscription__barre {
   background-color: white;
   padding: 20px;
@@ -217,56 +239,117 @@ Le composant .carte
 }
 
 /* ///////////////////////
-Les composants 
+Les layouts 
 /////////////////////// */
-* {
-  margin: 0;
+.global {
+  margin: 5%;
+  padding: 0;
   box-sizing: border-box;
-  overflow-x: none;
 }
 
-.global {
-  max-width: 1000px;
+.boiteflex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .hero {
   min-height: 100vh;
-  background-image: url("images/background_MondoVoyage.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.hero__contenu {
-  padding-top: 10vh;
-  margin-left: 3vw;
-  height: 50vh;
+  background-image: url("images/maldives.jpg");
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
 }
-.hero__contenu__titre {
-  font-weight: bold;
-  text-shadow: 0px 4px 2px rgba(206, 124, 41, 0.6);
-}
-.hero__contenu__description {
-  max-width: 400px;
-  margin-left: 0;
-}
-.hero__contenu__courriel {
-  text-decoration: none;
-  color: black;
-  margin-left: 0;
-}
-.hero__contenu__bouton {
-  width: 150px;
-  border-radius: 5px;
+.hero button {
+  display: flex;
+  background-color: rgba(0, 229, 255, 0.527);
   border: none;
-  background-color: rgba(206, 124, 41, 0.6);
-  padding: 3px;
-  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 10px 20px;
 }
-.hero__contenu__icone-app {
-  padding-top: 20px;
+.hero button, .hero a, .hero p {
+  margin-top: 2%;
+}
+
+.inscription {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 140%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  width: 60%;
+}
+.inscription #containeur__infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+.inscription #containeur__infos > div {
+  flex: 1;
+  min-width: 200px;
+}
+.inscription__bouton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.promotion h1 {
+  margin: 2%;
+}
+.promotion__images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 5px;
+  margin: 2%;
+}
+.promotion__images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.chk__burger {
+  display: none;
+}
+
+.chk__burger + label {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#chk__burger {
+  display: none;
+}
+
+.entete__nav {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.chk__burger:checked ~ .entete__nav {
+  display: flex;
+}
+
+.menu__a {
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .entete {
@@ -274,23 +357,26 @@ Les composants
   justify-content: space-between;
   align-items: center;
 }
-.entete__navigation {
-  width: auto;
-  position: static;
-  flex-direction: row;
-  background-color: transparent;
+.entete__nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  flex-direction: row;
+  gap: 0 40px;
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 800px) {
-  .entete__navigation {
+@media screen and (max-width: 700px) {
+  .entete__nav {
+    display: none;
+    flex-direction: column;
+    height: 40vh;
+    width: 100vw;
+    padding-bottom: 20px;
+    gap: 30px 0;
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #fff;
-    padding: 20px;
-    flex-direction: column;
-    width: 100vw;
+    background-color: white;
   }
 }
 
@@ -323,4 +409,11 @@ footer {
 }
 .piedpage__s1__description {
   flex: 1 0 400px;
+}
+
+/* ///////////////////////
+Les bases 
+/////////////////////// */
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
