@@ -5,6 +5,7 @@
                 <?php wp_nav_menu(array(
                     "menu" => "externe",
                     "container" => "nav",
+                    "container_class" => "piedpage__s1__externe"
                 )); ?>
             </div>
             <div class="piedpage__s1__adresse">
