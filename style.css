@@ -35,7 +35,7 @@ Les composants
   flex: 1 1 50%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-around;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -47,11 +47,6 @@ Les composants
   color: #333;
   text-decoration: none;
   padding: 2px 5px;
-}
-@media screen and (max-width: 700px) {
-  .menu {
-    flex-direction: column;
-  }
 }
 
 /* /////////////////////////////////////////// menu principal */
@@ -75,6 +70,9 @@ Le composant .carte
   border-radius: 8px;
 }
 .carte__contenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   margin-top: 15px;
 }
 .carte__titre {
@@ -92,6 +90,7 @@ Le composant .carte
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 40px;
 }
 .carte__bouton--actif {
   background-color: #0056b3;
@@ -99,13 +98,24 @@ Le composant .carte
 .carte__bouton:hover {
   background-color: #0056b3;
 }
-.carte__bouton .post-categories {
+.carte .post-categories {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+}
+.carte .post-categories li {
   list-style-type: none;
   gap: 3px;
   display: flex;
+  padding: 10px;
+  padding-left: 0px;
 }
-.carte__bouton .post-categories a {
+.carte .post-categories li a {
   text-decoration: none;
+  background-color: rgb(85, 133, 170);
+  padding: 5px;
+  border-radius: 2px;
+  color: white;
 }
 
 .recherche {
@@ -205,7 +215,7 @@ Le composant .carte
 
 .galerie {
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   padding: 2vw;
 }
 .galerie__titre {
@@ -232,6 +242,12 @@ Les layouts
   margin: 5%;
   padding: 0;
   box-sizing: border-box;
+}
+
+.boiteflex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .hero {
@@ -343,45 +359,37 @@ Les layouts
   justify-content: space-between;
   align-items: center;
 }
-.entete__nav {
+.entete__navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: 0 40px;
-  flex-wrap: wrap;
+  width: 60%;
 }
-@media screen and (max-width: 700px) {
-  .entete__nav {
-    display: none;
-    flex-direction: column;
-    height: 40vh;
-    width: 100vw;
-    padding-bottom: 20px;
-    gap: 30px 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
-  }
+.entete__externe {
+  width: 75%;
 }
 
 /*
   --------------------------------- Layout du pied de page
 */
 footer {
-  background-color: rgb(236, 136, 13);
+  background-color: rgb(85, 133, 170);
   color: #000;
 }
 
 .piedpage {
   display: flex;
   flex-direction: column;
+  height: 20vh;
+  margin: 0;
 }
 .piedpage__s1 {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
+  padding: 2rem;
 }
 .piedpage__s1__externe {
   flex: 0 0 20%;

@@ -6,7 +6,7 @@
             <article class="populaire_article">
                 
                 <h2 class="populaire__titre"><?php the_title(); ?></h2>
-                <div class="populaire__contenu"><?php echo wp_trim_word(get_the_excerpt(),50,"..."); ?></div>
+                <div class="populaire__contenu"><?php echo wp_trim_words(get_the_excerpt(),50,"..."); ?></div>
             </article>
             <?php endwhile; endif; ?>
         </div>

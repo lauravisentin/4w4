@@ -3,18 +3,21 @@
 */
 
 footer{
-    // Devrait devenir variable
-    background-color: rgb(236, 136, 13);
+    background-color: $couleur_footer;
+    
     color : #000; 
   }
   
   .piedpage{
       display: flex;
       flex-direction: column;
+      height:20vh;
+      margin:0;
       &__s1{
           display: flex;
           flex-wrap: wrap;
           gap: 3rem;
+          padding:2rem;
           &__externe {
               flex : 0 0 20%;
               & .menu { //ul

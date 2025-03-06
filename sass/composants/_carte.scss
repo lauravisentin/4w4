@@ -6,9 +6,8 @@ Le composant .carte
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
-  flex : 1 1 220px;
-  
-  
+  flex : 1 1 220px;  
+
 
   &--grande {
     padding: 40px;
@@ -22,6 +21,9 @@ Le composant .carte
   }
 
   &__contenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin-top: 15px;
   }
   
@@ -42,6 +44,7 @@ Le composant .carte
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width:40px;
 
     &--actif {
       background-color: #0056b3;
@@ -51,14 +54,31 @@ Le composant .carte
       background-color: #0056b3;
     }
 
-    & .post-categories{
+    
+  }
+  .post-categories{
+    display:flex;
+    flex-direction: row;
+    padding-left:0;
+    
+    & li{
       list-style-type:none;
       gap:3px;
       display:flex;
-      a{
+      padding:10px;
+      padding-left:0px;
+      
+
+
+      & a{
         text-decoration: none;
+        background-color: $couleur_footer;
+        padding:5px;
+        border-radius: 2px;
+        color:white;
       }
     }
-  
   }
+  
+  
 }
