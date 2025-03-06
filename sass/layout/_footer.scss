@@ -16,24 +16,34 @@ footer{
       &__s1{
           display: flex;
           flex-wrap: wrap;
-          gap: 3rem;
-          padding:2rem;
+          padding-left:2rem;
+
           &__externe {
               flex : 0 0 20%;
+
               & .menu { //ul
                   display : flex;
                   flex-direction: column;
+                  
+
+                & a{
+                    color:black;
+                }
               }
   
   
           }
           &__adresse{
-              flex : 0 0 40%;
-              &__coord{}
-              &__recherche{}
+              flex : 0 0 30%;
+              width:10vw;
+              gap:10px;
           }
           &__description{
-              flex:1 0 400px;
+              display:flex;
+              flex-direction: column;
+              justify-content: space-around;
+              min-width:10vw;
           }
       }
+      
   }

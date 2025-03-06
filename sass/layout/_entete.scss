@@ -36,15 +36,13 @@ $point__rupture: 700px;
     display: flex;
 }
 
-.menu__a {
-    font-size: 22px;
-    font-weight: bold;
-}
+
 
 .entete {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding:2rem;
 
     &__navigation {
         display: flex;
@@ -68,9 +66,6 @@ $point__rupture: 700px;
         // }
     }
 
-    &__externe{
-        width:75%;
-    }
 }
 
 

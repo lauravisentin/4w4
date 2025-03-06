@@ -39,6 +39,7 @@ Les composants
   margin: 0;
   padding: 0;
   list-style-type: none;
+  gap: 5px;
 }
 .menu__item {
   list-style: none;
@@ -47,6 +48,11 @@ Les composants
   color: #333;
   text-decoration: none;
   padding: 2px 5px;
+}
+.menu__li {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
 }
 
 /* /////////////////////////////////////////// menu principal */
@@ -122,7 +128,6 @@ Le composant .carte
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .recherche__input {
   flex: 1;
@@ -349,15 +354,11 @@ Les layouts
   display: flex;
 }
 
-.menu__a {
-  font-size: 22px;
-  font-weight: bold;
-}
-
 .entete {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem;
 }
 .entete__navigation {
   display: flex;
@@ -366,9 +367,6 @@ Les layouts
   flex-direction: row;
   gap: 0 40px;
   width: 60%;
-}
-.entete__externe {
-  width: 75%;
 }
 
 /*
@@ -388,8 +386,7 @@ footer {
 .piedpage__s1 {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
-  padding: 2rem;
+  padding-left: 2rem;
 }
 .piedpage__s1__externe {
   flex: 0 0 20%;
@@ -398,11 +395,19 @@ footer {
   display: flex;
   flex-direction: column;
 }
+.piedpage__s1__externe .menu a {
+  color: black;
+}
 .piedpage__s1__adresse {
-  flex: 0 0 40%;
+  flex: 0 0 30%;
+  width: 10vw;
+  gap: 10px;
 }
 .piedpage__s1__description {
-  flex: 1 0 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 10vw;
 }
 
 /* ///////////////////////

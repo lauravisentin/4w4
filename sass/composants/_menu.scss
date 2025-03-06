@@ -7,9 +7,11 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-
+  gap:5px;
+    
   &__item {
       list-style: none;
+
   }
 
   &__link {
@@ -17,6 +19,13 @@
       text-decoration: none;
       padding: 2px 5px;
   }
+
+  &__li {
+    font-size: 22px;
+    font-weight: bold;
+    color:black;
+
+}
 
 //   @media screen and (max-width: $point__rupture) {
 //       flex-direction: column;
