@@ -27,19 +27,6 @@ Les Variables
   font-family: "Liter", serif;
 }
 
-a {
-  color: rgb(9, 20, 74);
-  text-decoration: none;
-}
-a:hover {
-  color: rgba(0, 0, 0, 0.1);
-}
-a:visited {
-  color: rgba(0, 0, 0, 0.3);
-}
-a:focus {
-  color: rgba(0, 0, 0, 0.4);
-}
 /* ///////////////////////
 Les composants 
 /////////////////////// */
@@ -64,25 +51,8 @@ Les composants
 @media screen and (max-width: 700px) {
   .menu {
     flex-direction: column;
-    gap: 6px 0px;
-  }
-  .recherche {
-    display: none;
-  }
-
-  .inscription {
-    display: none;
-  }
-
-  .chk__burger {
-    display: block;
   }
 }
-
-.menu__a {
-  padding: 2px 5px;
-}
-
 
 /* /////////////////////////////////////////// menu principal */
 /* *******************
@@ -129,6 +99,14 @@ Le composant .carte
 .carte__bouton:hover {
   background-color: #0056b3;
 }
+.carte__bouton .post-categories {
+  list-style-type: none;
+  gap: 3px;
+  display: flex;
+}
+.carte__bouton .post-categories a {
+  text-decoration: none;
+}
 
 .recherche {
   display: flex;
@@ -151,6 +129,11 @@ Le composant .carte
   flex: 0 0 20px;
   padding: 0 3px;
 }
+@media screen and (max-width: 700px) {
+  .recherche {
+    display: none;
+  }
+}
 
 .inscription {
   display: flex;
@@ -159,7 +142,11 @@ Le composant .carte
   width: 100%;
   font-size: 1rem;
 }
-
+@media screen and (max-width: 700px) {
+  .inscription {
+    display: none;
+  }
+}
 .inscription__barre {
   background-color: white;
   padding: 20px;
@@ -247,12 +234,6 @@ Les layouts
   box-sizing: border-box;
 }
 
-.boiteflex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
 .hero {
   min-height: 100vh;
   background-image: url("images/maldives.jpg");
@@ -335,6 +316,11 @@ Les layouts
   display: none;
 }
 
+@media screen and (max-width: 700px) {
+  .chk__burger {
+    display: block;
+  }
+}
 .entete__nav {
   display: none;
   justify-content: center;

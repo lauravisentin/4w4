@@ -8,6 +8,7 @@ Le composant .carte
   border-radius: 8px;
   flex : 1 1 220px;
   
+  
 
   &--grande {
     padding: 40px;
@@ -23,7 +24,7 @@ Le composant .carte
   &__contenu {
     margin-top: 15px;
   }
-
+  
   &__titre {
     font-size: 24px;
     color: #333;
@@ -49,5 +50,15 @@ Le composant .carte
     &:hover {
       background-color: #0056b3;
     }
+
+    & .post-categories{
+      list-style-type:none;
+      gap:3px;
+      display:flex;
+      a{
+        text-decoration: none;
+      }
+    }
+  
   }
 }
