@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-    <h1>Single-post</h1>
     <section class="populaire">
         <div class="global">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -11,6 +10,8 @@
                 <p>Température minimum&nbsp;<?php echo the_field ('temperature_minimum'); ?>&#xB0;</p>
                 <p>Température maximum&nbsp;<?php echo the_field ('temperature_maximum'); ?>&#xB0;</p>
                 <p>Température moyenne&nbsp;<?php echo the_field ('temperature_moyenne'); ?>&#xB0;</p>
+
+                <!-- Afficher toutes les catégories -->
             </article>
             
             <?php endwhile; endif; ?>

@@ -380,13 +380,12 @@ footer {
 .piedpage {
   display: flex;
   flex-direction: column;
-  height: 20vh;
-  margin: 0;
 }
 .piedpage__s1 {
   display: flex;
   flex-wrap: wrap;
   padding-left: 2rem;
+  gap: 3rem;
 }
 .piedpage__s1__externe {
   flex: 0 0 20%;
@@ -394,9 +393,6 @@ footer {
 .piedpage__s1__externe .menu {
   display: flex;
   flex-direction: column;
-}
-.piedpage__s1__externe .menu a {
-  color: black;
 }
 .piedpage__s1__adresse {
   flex: 0 0 30%;

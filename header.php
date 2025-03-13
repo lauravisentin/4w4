@@ -11,17 +11,26 @@
 
     <div class="entete">
         <figure class="entete__logo">
-            <?php echo get_custom_logo()?>
+            <?php
+                if (function_exists('the_custom_logo')) {
+                    the_custom_logo();
+                }
+            ?>
         </figure>
+        <label for="chk__burger" class="burger">
+            <img src="https://s2.svgbox.net/hero-solid.svg?ic=menu-alt-1&color=000" width="32" height="32">
+        </label>
+        <input type="checkbox" id="chk__burger" class="chk__burger">
         <div class="entete__navigation">
-            <?php get_template_part("gabarit/menu"); ?>
+            <?php wp_nav_menu(array(
+                'menu' => 'principal',
+                'container' => 'nav',
+                'container_class' => 'entete__menu'
+            )); ?>
             
             <form class="recherche">
-                <input type="search" placeholder="Rechercher" class="recherche__input">
-                <img class="recherche__img"  src="https://s2.svgbox.net/hero-outline.svg?ic=search&color=000" width="16" height="16">
+                <?php get_search_form(); ?>
             </form>
         </div>
     </div>
-
-
 </header>

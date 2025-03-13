@@ -9,28 +9,23 @@ footer{
   }
   
   .piedpage{
+    
       display: flex;
       flex-direction: column;
-      height:20vh;
-      margin:0;
+    //   height:20vh;
+    //   margin:0;
       &__s1{
           display: flex;
           flex-wrap: wrap;
           padding-left:2rem;
+          gap: 3rem;
 
           &__externe {
-              flex : 0 0 20%;
-
-              & .menu { //ul
-                  display : flex;
-                  flex-direction: column;
-                  
-
-                & a{
-                    color:black;
-                }
-              }
-  
+            flex : 0 0 20%;
+            & .menu { //ul
+                display : flex;
+                flex-direction: column;
+            }
   
           }
           &__adresse{

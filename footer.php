@@ -1,16 +1,18 @@
 <footer>
+    <?php
+        $footer_mission = get_theme_mod('footer_mission', 'Default Title');
+    ?>
+
     <div class="piedpage global">
         <section class="piedpage__s1">
-            <div class="piedpage__s1__externe">
                 <h3>Liens externes</h3>
                 <?php wp_nav_menu(array(
                     "menu" => "externe",
                     "container" => "nav",
                     "container_class" => "piedpage__s1__externe"
                 )); ?>
-                <?php get_template_part("gabarit/icones"); ?>
 
-            </div>
+                <?php get_template_part("gabarit/icones"); ?>
             <div class="piedpage__s1__adresse">
                 <h3>Addresse et recherche</h3>
                 <div class="piedpage__s1__adresse__coord">
@@ -24,6 +26,7 @@
                 </div>
             </div>
             <div class="piedpage__s1__description">
+                <?php echo $footer_mission; ?>
                 <h3>Mission du club</h3>
                 Partez à l'aventure en toute sérénité.
                 Des voyages sur mesure pour des souvenirs inoubliables.
@@ -32,7 +35,6 @@
         </section>
         <section class="piedpage__s2"></section>
         <section class="piedpage__s3"></section>
-
 
     </div>
 </footer>
