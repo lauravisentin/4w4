@@ -81,6 +81,11 @@ $wp_customize->add_control('footer_mission', array(
   'type' => 'textarea',
 ));
 
+
+
+
+
+
 }
 
 add_action('customize_register', 'theme_31w_customize_register');

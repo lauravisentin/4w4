@@ -81,6 +81,30 @@ $wp_customize->add_control('footer_mission', array(
   'type' => 'textarea',
 ));
 
+////////////////////////////////////////////////////////// Adresse
+$wp_customize->add_setting('footer_adresse', array(
+  'default' => __('Adresse du club de voyage', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('footer_adresse', array(
+  'label' => __('Adresse', 'theme_31w'),
+  'section' => 'footer_section',
+  'type' => 'textarea',
+));
+
+////////////////////////////////////////////////////////// Téléphone
+$wp_customize->add_setting('footer_telephone', array(
+  'default' => __('Numéro de téléphone du club de voyage', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('footer_telephone', array(
+  'label' => __('Telephone', 'theme_31w'),
+  'section' => 'footer_section',
+  'type' => 'tel',
+));
+
 }
 
 add_action('customize_register', 'theme_31w_customize_register');

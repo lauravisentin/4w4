@@ -1,6 +1,9 @@
 <footer>
     <?php
         $footer_mission = get_theme_mod('footer_mission', 'Default Title');
+        $footer_adresse = get_theme_mod('footer_adresse', 'Default Title');
+        $footer_telephone = get_theme_mod('footer_telephone', 'Default Title');
+
     ?>
 
     <div class="piedpage global">
@@ -13,25 +16,23 @@
                 )); ?>
 
                 <?php get_template_part("gabarit/icones"); ?>
+
             <div class="piedpage__s1__adresse">
                 <h3>Addresse et recherche</h3>
                 <div class="piedpage__s1__adresse__coord">
-                    3800, Sherbrooke est, Montréal, Québec, H1x 2A2 
+                    <?php echo $footer_adresse; ?>
                 </div>
                 <div class="piedpage__s1__adresse__tel">
-                    Tel: (514) 254-7131
+                <?php echo $footer_telephone; ?>
                 </div>
                 <div class="piedpage__s1__adresse__recherche">
-                    <?php get_search_form();   ?>
+                    <?php get_search_form();  ?>
                 </div>
             </div>
             <div class="piedpage__s1__description">
                 <?php echo $footer_mission; ?>
-                <h3>Mission du club</h3>
-                Partez à l'aventure en toute sérénité.
-                Des voyages sur mesure pour des souvenirs inoubliables.
-                <?php get_template_part("gabarit/menu"); ?>
             </div>
+            <?php get_template_part("gabarit/menu"); ?>
         </section>
         <section class="piedpage__s2"></section>
         <section class="piedpage__s3"></section>
