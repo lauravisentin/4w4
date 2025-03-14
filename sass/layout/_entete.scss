@@ -1,71 +1,49 @@
-// Assurez-vous que cette variable est définie quelque part dans votre SCSS
-$point__rupture: 700px;
-
-.chk__burger {
-    display: none;
-}
-
-.chk__burger + label {
-    display: none;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
-    cursor: pointer;
-}
-
-#chk__burger {
-    display: none;
-}
-
-@media screen and (max-width: $point__rupture) {
-    .chk__burger  {
-        display: block;
+.burger{
+    display : none;
+    @media screen and (max-width:$point__rupture) {
+        display : block;
+        position : absolute;
+        top: 10px;
+        right : 10px;
+        z-index: 99;
     }
 }
-
-.entete__nav {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+.chk__burger{
+    display : none;
 }
-
-.chk__burger:checked ~ .entete__nav {
+.chk__burger:checked ~ .entete__navigation{
     display: flex;
 }
 
 
-
-.entete {
+.entete{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:2rem;
+    
+
 
     &__navigation {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+        position : static;
+
+        @media screen and (max-width:$point__rupture) {
+            display : none;
+            flex-direction: column;
+            height: 52vh;
+            width: 100vw;
+            padding-bottom: 20px;
+            gap: 30px 0; 
+            position : absolute;
+            top:0;
+            right:0;
+            background-color: #fff;
+        }
+        flex-direction: row; 
         align-items: center;
-        flex-direction: row;
         gap: 0 40px;
-        width:60%;
+        flex-wrap: wrap;
 
-        // @media screen and (max-width: $point__rupture) {
-        //     display: none;
-        //     flex-direction: column;
-        //     height: 40vh;
-        //     width: 100vw;
-        //     padding-bottom: 20px;
-        //     gap: 30px 0;
-        //     position: absolute;
-        //     top: 0;
-        //     right: 0;
-        //     background-color: white;
-        // }
     }
-
 }
-
-
