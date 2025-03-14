@@ -7,36 +7,45 @@
     ?>
 
     <div class="piedpage global">
+
         <section class="piedpage__s1">
-                <h3>Liens externes</h3>
-                <?php wp_nav_menu(array(
-                    "menu" => "externe",
-                    "container" => "nav",
-                    "container_class" => "piedpage__s1__externe"
-                )); ?>
+            <h3>Liens externes</h3>
+            <?php wp_nav_menu(array(
+                "menu" => "externe",
+                "container" => "nav",
+                "container_class" => "piedpage__s1__externe"
+            )); ?>
+            <?php get_template_part("gabarit/icones"); ?>
+        </section>
 
-                <?php get_template_part("gabarit/icones"); ?>
-
-            <div class="piedpage__s1__adresse">
+        <section class="piedpage__s2">
+            <div class="piedpage__s2__adresse">
                 <h3>Addresse et recherche</h3>
-                <div class="piedpage__s1__adresse__coord">
+                <div class="piedpage__s2__adresse__coord">
                     <?php echo $footer_adresse; ?>
                 </div>
-                <div class="piedpage__s1__adresse__tel">
+                <div class="piedpage__s2__adresse__tel">
                 <?php echo $footer_telephone; ?>
                 </div>
-                <div class="piedpage__s1__adresse__recherche">
+                <div class="piedpage__s2__adresse__recherche">
                     <?php get_search_form();  ?>
                 </div>
             </div>
-            <div class="piedpage__s1__description">
+        </section>
+
+        <section class="piedpage__s3">
+            <h3>Mission</h3>
+            <div class="piedpage__s3__description">
                 <?php echo $footer_mission; ?>
             </div>
-            <?php get_template_part("gabarit/menu"); ?>
+            <div class="piedpage__s3__menu">
+                <?php wp_nav_menu(array(
+                    "menu" => "footer",
+                    "container" => "nav",
+                    "container_class" => "piedpage__s3__menu"
+                )); ?>
+            </div>
         </section>
-        <section class="piedpage__s2"></section>
-        <section class="piedpage__s3"></section>
-
     </div>
 </footer>
 <?php wp_footer() ?>

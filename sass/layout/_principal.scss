@@ -11,26 +11,7 @@
     gap: 20px;
 }
 
-.hero{
-    min-height: 100vh;
-    background-image: url("images/maldives.jpg");
-    display: flex;
-    flex-direction: column;
-    
-    
-    
-    button{
-    display: flex;
-    background-color: rgba(0, 229, 255, 0.527);
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    }
 
-    button, a, p{
-        margin-top: 2%;
-    }
-}
 
 .inscription {
     position: absolute;

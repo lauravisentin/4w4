@@ -118,7 +118,7 @@ Le composant .carte
 }
 .carte .post-categories li a {
   text-decoration: none;
-  background-color: rgb(85, 133, 170);
+  background-color: #5585aa;
   padding: 5px;
   border-radius: 2px;
   color: white;
@@ -134,11 +134,8 @@ Le composant .carte
   height: 1.8rem;
   border: none;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgb(255, 255, 255);
   border-right: 1px dotted rgba(0, 0, 0, 0.2);
-}
-.recherche__input:hover {
-  background-color: rgba(0, 0, 0, 0.06);
 }
 .recherche__img {
   flex: 0 0 20px;
@@ -148,74 +145,6 @@ Le composant .carte
   .recherche {
     display: none;
   }
-}
-
-.inscription {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  font-size: 1rem;
-}
-@media screen and (max-width: 700px) {
-  .inscription {
-    display: none;
-  }
-}
-.inscription__barre {
-  background-color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 60%;
-}
-.inscription__conteneurs {
-  display: flex;
-  flex-direction: column;
-  min-width: 100px;
-  gap: 10px;
-  padding-right: 20px;
-}
-.inscription__groupe {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 100%;
-}
-.inscription label {
-  font-size: 14px;
-  color: #333;
-}
-.inscription input {
-  border: 1px solid #00a7d0;
-  padding: 8px;
-  border-radius: 3px;
-  outline: none;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.02);
-}
-.inscription input:hover {
-  background-color: rgba(0, 0, 0, 0.06);
-}
-.inscription button {
-  background-color: white;
-  border: 1px solid #00a7d0;
-  padding: 8px 15px;
-  color: #00a7d0;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: 0.3s;
-  min-width: 100px;
-  margin-top: 16px;
-}
-.inscription button:hover {
-  background-color: #00a7d0;
-  color: white;
 }
 
 .galerie {
@@ -253,23 +182,6 @@ Les layouts
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-.hero {
-  min-height: 100vh;
-  background-image: url("images/maldives.jpg");
-  display: flex;
-  flex-direction: column;
-}
-.hero button {
-  display: flex;
-  background-color: rgba(0, 229, 255, 0.527);
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-}
-.hero button, .hero a, .hero p {
-  margin-top: 2%;
 }
 
 .inscription {
@@ -345,11 +257,13 @@ Les layouts
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 }
 .entete__navigation {
   display: flex;
   justify-content: flex-end;
   position: static;
+  margin: 20px;
   flex-direction: row;
   align-items: center;
   gap: 0 40px;
@@ -370,41 +284,71 @@ Les layouts
   }
 }
 
-/*
-  --------------------------------- Layout du pied de page
-*/
-footer {
-  background-color: rgb(85, 133, 170);
-  color: #000;
-}
-
 .piedpage {
   display: flex;
-  flex-direction: column;
-}
-.piedpage__s1 {
-  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
-  padding-left: 2rem;
-  gap: 3rem;
+  gap: 20px;
+  padding: 40px;
+  background-color: #5585aa;
+  color: black;
 }
-.piedpage__s1__externe {
-  flex: 0 0 20%;
-}
-.piedpage__s1__externe .menu {
+.piedpage section {
+  flex: 1;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
-.piedpage__s1__adresse {
-  flex: 0 0 30%;
-  width: 10vw;
+.piedpage h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: black;
+}
+.piedpage__s1__externe, .piedpage__s3__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.piedpage__s2__adresse {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
-.piedpage__s1__description {
+.piedpage__s2__adresse__coord, .piedpage__s2__adresse__tel, .piedpage__s2__adresse__recherche {
+  padding: 5px 0;
+}
+@media screen and (max-width: 768px) {
+  .piedpage {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .piedpage section {
+    width: 100%;
+  }
+}
+
+.hero {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  min-width: 10vw;
+}
+
+.hero button {
+  display: flex;
+  background-color: #3988e8;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero button, .hero a, .hero p {
+  margin-top: 2%;
 }
 
 /* ///////////////////////
@@ -412,4 +356,5 @@ Les bases
 /////////////////////// */
 a {
   text-decoration: none;
+  color: #000000;
 }/*# sourceMappingURL=style.css.map */

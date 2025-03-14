@@ -1,44 +1,55 @@
-/*
-  --------------------------------- Layout du pied de page
-*/
+.piedpage {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+  background-color: $couleur_footer;
+  color: black;
 
-footer{
-    background-color: $couleur_footer;
-    
-    color : #000; 
-  }
-  
-  .piedpage{
-    
+  & section {
+      flex: 1;
+      min-width: 250px;
       display: flex;
       flex-direction: column;
-    //   height:20vh;
-    //   margin:0;
-      &__s1{
-          display: flex;
-          flex-wrap: wrap;
-          padding-left:2rem;
-          gap: 3rem;
-
-          &__externe {
-            flex : 0 0 20%;
-            & .menu { //ul
-                display : flex;
-                flex-direction: column;
-            }
-  
-          }
-          &__adresse{
-              flex : 0 0 30%;
-              width:10vw;
-              gap:10px;
-          }
-          &__description{
-              display:flex;
-              flex-direction: column;
-              justify-content: space-around;
-              min-width:10vw;
-          }
-      }
-      
+      gap: 15px;
   }
+
+  & h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: black;
+  }
+  
+
+  &__s1__externe,
+  &__s3__menu{
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+  }
+
+  &__s2__adresse {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__coord,
+      &__tel,
+      &__recherche {
+          padding: 5px 0;
+      }
+  }
+
+  @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      & section {
+          width: 100%;
+      }
+  }
+}
