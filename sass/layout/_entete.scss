@@ -1,11 +1,10 @@
 .burger{
     display : none;
     @media screen and (max-width:$point__rupture) {
-        display : block;
-        position : absolute;
+        display : flex;
         top: 10px;
         right : 10px;
-        z-index: 99;
+        z-index: 1000;
     }
 }
 .chk__burger{

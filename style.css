@@ -60,7 +60,7 @@ Les composants
   border: 1px solid #f1f1f1;
   padding: 20px;
   border-radius: 8px;
-  flex: 1 0 280px;
+  flex: 0 0 280px;
   min-width: auto;
   position: relative;
   overflow: hidden;
@@ -106,7 +106,7 @@ Les composants
 }
 .carte__bouton {
   padding: 10px 20px;
-  background-color: rgba(0, 143, 204, 0.829);
+  background-color: rgba(0, 143, 204, 0.8274509804);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -158,7 +158,7 @@ Les composants
   outline: none;
   background-color: rgb(255, 255, 255);
   border: 1px dotted rgba(0, 0, 0, 0.2);
-  color: rgba(0, 143, 204, 0.829);
+  color: rgba(0, 143, 204, 0.8274509804);
   font-size: 14px;
   font-family: "Liter", serif;
 }
@@ -255,11 +255,10 @@ Les layouts
 }
 @media screen and (max-width: 700px) {
   .burger {
-    display: block;
-    position: absolute;
+    display: flex;
     top: 10px;
     right: 10px;
-    z-index: 99;
+    z-index: 1000;
   }
 }
 
@@ -375,11 +374,13 @@ header .entete__navigation {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-size: larger;
+  padding-top: 10vh;
 }
 
 .hero button {
   display: flex;
-  background-color: rgba(0, 143, 204, 0.829);
+  background-color: rgba(0, 143, 204, 0.8274509804);
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -389,6 +390,91 @@ header .entete__navigation {
 
 .hero button, .hero a, .hero p {
   margin-top: 2%;
+}
+
+.global .single {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.populaire {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.populaire__titre {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+.populaire__contenu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.populaire__image {
+  display: flex;
+  max-width: 100%;
+  border-radius: 8px;
+}
+.populaire__temp {
+  flex: 1;
+  max-width: 55%;
+}
+.populaire__temp p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+.populaire__temp p span {
+  font-weight: bold;
+  color: #ff5733;
+}
+
+.populaire_article {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+.populaire_article h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+.populaire_article .populaire__contenu {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.populaire_article .populaire__image {
+  flex: 1;
+  max-width: 40%;
+}
+.populaire_article .populaire__image img {
+  width: 100%;
+  border-radius: 8px;
+}
+.populaire_article .populaire__temp {
+  flex: 1;
+  max-width: 55%;
+}
+.populaire_article .populaire__temp p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+.populaire_article .populaire__temp p span {
+  font-weight: bold;
+  color: #ff5733;
 }
 
 /* ///////////////////////
@@ -401,5 +487,5 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: rgba(0, 143, 204, 0.829);
+  color: rgba(0, 143, 204, 0.8274509804);
 }/*# sourceMappingURL=style.css.map */

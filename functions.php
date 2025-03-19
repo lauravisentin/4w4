@@ -29,6 +29,30 @@ $wp_customize->add_control('hero_courriel', array(
   'type' => 'text',
 ));
 
+//////////////////////////////////////////////////////// L'adresse'
+$wp_customize->add_setting('hero_adresse', array(
+  'default' => __('3800 R. Sherbrooke E, Montréal, QC H1X 2A2', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('hero_adresse', array(
+  'label' => __('Adresse', 'theme_31w'),
+  'section' => 'hero_section',
+  'type' => 'text',
+));
+
+//////////////////////////////////////////////////////// Téléphone
+$wp_customize->add_setting('hero_telephone', array(
+  'default' => __('(514) 254-7131', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('hero_telephone', array(
+  'label' => __('Téléphone', 'theme_31w'),
+  'section' => 'hero_section',
+  'type' => 'text',
+));
+
 
 ////////////////////////////////////////////////// image en background de la zone hero
 $wp_customize->add_setting('hero_background', array(
