@@ -1,4 +1,8 @@
 a{
     text-decoration: none;
-    color:$couleur__lien;
+    color:black;
+}
+a:hover{
+    text-decoration: none;
+    color:$bleu;
 }

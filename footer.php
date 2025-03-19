@@ -40,9 +40,9 @@
             </div>
             <div class="piedpage__s3__menu">
                 <?php wp_nav_menu(array(
-                    "menu" => "footer",
-                    "container" => "nav",
-                    "container_class" => "piedpage__s3__menu"
+                    'menu' => 'principal',
+                    'container' => 'nav',
+                    'container_class' => 'entete__menu'
                 )); ?>
             </div>
         </section>

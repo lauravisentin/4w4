@@ -16,12 +16,17 @@
 }
 
 
-.entete{
+header .entete{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
 
+    &__logo{
+        margin-left:60px;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
     &__navigation {
         display: flex;
         justify-content: flex-end;

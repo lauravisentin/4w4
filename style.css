@@ -39,7 +39,7 @@ Les composants
   margin: 0;
   padding: 0;
   list-style-type: none;
-  gap: 5px;
+  gap: 25px;
 }
 .menu__item {
   list-style: none;
@@ -56,34 +56,49 @@ Les composants
 }
 
 /* /////////////////////////////////////////// menu principal */
-/* *******************
-Le composant .carte
-********************** */
 .carte {
-  border: 1px solid #ddd;
+  border: 1px solid #f1f1f1;
   padding: 20px;
   border-radius: 8px;
-  flex: 1 1 220px;
+  flex: 1 0 280px;
+  min-width: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0), 0 2px 6px rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
 }
-.carte--grande {
-  padding: 40px;
-}
-.carte--petite {
-  padding: 20px;
+.carte:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 .carte__image img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.carte__image img:hover {
+  transform: scale(1.03);
 }
 .carte__contenu {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-top: 15px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .carte__titre {
   font-size: 24px;
   color: #333;
+  transition: color 0.3s ease;
 }
 .carte__description {
   font-size: 16px;
@@ -91,37 +106,45 @@ Le composant .carte
 }
 .carte__bouton {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: rgba(0, 143, 204, 0.829);
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 40px;
-}
-.carte__bouton--actif {
-  background-color: #0056b3;
+  width: 80px;
+  transition: background-color 0.3s, transform 0.2s ease;
 }
 .carte__bouton:hover {
-  background-color: #0056b3;
-}
-.carte .post-categories {
-  display: flex;
-  flex-direction: row;
-  padding-left: 0;
-}
-.carte .post-categories li {
-  list-style-type: none;
-  gap: 3px;
-  display: flex;
-  padding: 10px;
-  padding-left: 0px;
-}
-.carte .post-categories li a {
-  text-decoration: none;
-  background-color: #5585aa;
-  padding: 5px;
-  border-radius: 2px;
+  background-color: #ffcc24;
   color: white;
+  transform: translateY(-3px);
+}
+.carte__categories .post-categories {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 10px;
+  padding-left: 0;
+  list-style-type: none;
+  max-width: 100%;
+}
+.carte__categories .post-categories li {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  max-width: 100%;
+}
+.carte__categories .post-categories li a {
+  padding: 8px 15px;
+  background-color: #ffb229;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.carte__categories .post-categories li a:hover {
+  background-color: #ffcc24;
 }
 
 .recherche {
@@ -130,16 +153,26 @@ Le composant .carte
   font-size: 1.2rem;
 }
 .recherche__input {
-  flex: 1;
   height: 1.8rem;
   border: none;
   outline: none;
   background-color: rgb(255, 255, 255);
-  border-right: 1px dotted rgba(0, 0, 0, 0.2);
+  border: 1px dotted rgba(0, 0, 0, 0.2);
+  color: rgba(0, 143, 204, 0.829);
+  font-size: 14px;
+  font-family: "Liter", serif;
+}
+.recherche__bouton {
+  height: 1.8rem;
+  border: none;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+  border: 1px dotted rgba(0, 0, 0, 0.2);
 }
 .recherche__img {
   flex: 0 0 20px;
   padding: 0 3px;
+  background-color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 700px) {
   .recherche {
@@ -172,6 +205,10 @@ Le composant .carte
 /* ///////////////////////
 Les layouts 
 /////////////////////// */
+* {
+  box-sizing: border-box;
+}
+
 .global {
   margin: 5%;
   padding: 0;
@@ -182,38 +219,19 @@ Les layouts
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
-.inscription {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 140%);
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  width: 60%;
-}
-.inscription #containeur__infos {
+.categorie__header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+  width: 100vw;
 }
-.inscription #containeur__infos > div {
-  flex: 1;
-  min-width: 200px;
-}
-.inscription__bouton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+.categorie__header h1 {
+  margin: 0;
 }
 
 .promotion h1 {
@@ -253,13 +271,18 @@ Les layouts
   display: flex;
 }
 
-.entete {
+header .entete {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
 }
-.entete__navigation {
+header .entete__logo {
+  margin-left: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+header .entete__navigation {
   display: flex;
   justify-content: flex-end;
   position: static;
@@ -270,7 +293,7 @@ Les layouts
   flex-wrap: wrap;
 }
 @media screen and (max-width: 700px) {
-  .entete__navigation {
+  header .entete__navigation {
     display: none;
     flex-direction: column;
     height: 52vh;
@@ -291,7 +314,7 @@ Les layouts
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px;
-  background-color: #5585aa;
+  background-color: #81d4ff;
   color: black;
 }
 .piedpage section {
@@ -307,11 +330,6 @@ Les layouts
   text-transform: uppercase;
   color: black;
 }
-.piedpage__s1__externe, .piedpage__s3__menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
 .piedpage__s2__adresse {
   display: flex;
   flex-direction: column;
@@ -319,6 +337,21 @@ Les layouts
 }
 .piedpage__s2__adresse__coord, .piedpage__s2__adresse__tel, .piedpage__s2__adresse__recherche {
   padding: 5px 0;
+}
+.piedpage__s3__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 25px;
+}
+.piedpage__s3__menu nav ul {
+  flex-direction: column;
+  display: flex;
+  gap: 10px 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .piedpage {
@@ -328,6 +361,13 @@ Les layouts
   }
   .piedpage section {
     width: 100%;
+  }
+  .piedpage__s3__menu {
+    gap: 0 40px;
+  }
+  .piedpage__s3__menu nav ul {
+    flex-direction: row;
+    gap: 0 20px;
   }
 }
 
@@ -339,7 +379,7 @@ Les layouts
 
 .hero button {
   display: flex;
-  background-color: #3988e8;
+  background-color: rgba(0, 143, 204, 0.829);
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -356,5 +396,10 @@ Les bases
 /////////////////////// */
 a {
   text-decoration: none;
-  color: #000000;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgba(0, 143, 204, 0.829);
 }/*# sourceMappingURL=style.css.map */
