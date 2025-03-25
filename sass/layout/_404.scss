@@ -1,9 +1,14 @@
 .erreur {
-    background: white;
+    background: rgb(255, 251, 251);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    width:88vw;
+    height:80vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 
     &__titre {
         font-size: 2rem;
@@ -18,19 +23,35 @@
     }
 
     &__navigation {
-        &__lien {
-            display: inline-block;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            color: white;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+
+            li {
+            margin: 0;
             background-color: $bleu;
             padding: 10px 20px;
             border-radius: 6px;
             transition: background-color 0.3s;
-    
+
             &:hover {
-                background-color: darken($bleu, 10%);
+            background-color: $bleu-foncer;
+            color:white;
+            }
+
+            a.navigation__lien {
+                display: inline-block;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+                color: white;
+
+                
+            }
             }
         }
     }

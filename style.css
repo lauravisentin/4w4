@@ -478,11 +478,16 @@ header .entete__navigation {
 }
 
 .erreur {
-  background: white;
+  background: rgb(255, 251, 251);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  width: 88vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 }
 .erreur__titre {
   font-size: 2rem;
@@ -494,19 +499,30 @@ header .entete__navigation {
   margin-bottom: 20px;
   color: black;
 }
-.erreur__navigation__lien {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
+.erreur__navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+}
+.erreur__navigation ul li {
+  margin: 0;
   background-color: rgba(0, 143, 204, 0.8274509804);
   padding: 10px 20px;
   border-radius: 6px;
   transition: background-color 0.3s;
 }
-.erreur__navigation__lien:hover {
-  background-color: rgba(0, 107, 153, 0.8274509804);
+.erreur__navigation ul li:hover {
+  background-color: rgba(0, 97, 139, 0.8274509804);
+  color: white;
+}
+.erreur__navigation ul li a.navigation__lien {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 }
 
 /* ///////////////////////
