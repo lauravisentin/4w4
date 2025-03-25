@@ -104,10 +104,23 @@ $wp_customize->add_control('footer_mission', array(
 ));
 
 
+//////////////////////////////////////////////////////// Nouvelle section 404
 
-
-
-
+$wp_customize->add_section('erreur_section', array(
+  'title' => __('Section erreur', 'theme_31w'),
+  'priority' => 30,
+));
 }
+////////////////////////////////////////////////////////// Champ mission
+$wp_customize->add_setting('titre_erreur', array(
+  'default' => __('titre_erreur', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('titre_erreur', array(
+  'label' => __('Mission', 'theme_31w'),
+  'section' => 'erreur_section',
+  'type' => 'textarea',
+));
 
 add_action('customize_register', 'theme_31w_customize_register');
