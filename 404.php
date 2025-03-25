@@ -1,15 +1,17 @@
 <?php get_header() ?>
 
-<div class="boiteflex global">
-    <h1>Erreur 404</h1>
-    <p>Désolé, la page que vous recherchez n'existe pas.</p>
+<div class="boiteflex global erreur">
+    <h1 class="erreur__titre">Erreur 404</h1>
+    <p class="erreur__message">Désolé, la page que vous recherchez n'existe pas.</p>
 
-    <nav>
-        <ul>
-            <li><a href="accueil">Accueil</a></li>
+    <nav class="navigation">
+        <ul class="navigation__liste">
+            <li class="navigation__element">
+                <a href="accueil" class="navigation__lien">Accueil</a>
+            </li>
         </ul>
     </nav>
-
-<?php get_template_part("gabarit/icones"); ?>
+    <?php get_template_part("gabarit/icones"); ?>
 </div>
+
 <?php get_footer() ?>
