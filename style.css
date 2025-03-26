@@ -510,21 +510,25 @@ header .entete__navigation {
 }
 .erreur__navigation ul li {
   margin: 0;
-  background-color: rgba(0, 143, 204, 0.8274509804);
-  padding: 10px 20px;
+  background-color: white;
+  padding: 6px 12px;
+  border: 1px solid transparent;
   border-radius: 6px;
-  transition: background-color 0.3s;
-}
-.erreur__navigation ul li:hover {
-  background-color: rgba(0, 97, 139, 0.8274509804);
-  color: white;
+  transition: background-color 0.3s, border 0.3s;
 }
 .erreur__navigation ul li a.navigation__lien {
   display: inline-block;
   text-decoration: none;
   font-size: 1rem;
   font-weight: bold;
-  color: white;
+  color: rgba(0, 143, 204, 0.8274509804);
+}
+.erreur__navigation ul li:hover {
+  background-color: white;
+  border: 1px solid rgba(0, 143, 204, 0.8274509804);
+}
+.erreur__navigation ul li:hover a.navigation__lien {
+  color: rgba(0, 143, 204, 0.8274509804);
 }
 
 /* ///////////////////////

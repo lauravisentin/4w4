@@ -85,7 +85,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_i
 )));
 
 
-//////////////////////////////////////////////////////// Nouvelle section footer
+//////////////////////////////////////////////////////// Section footer
 
   $wp_customize->add_section('footer_section', array(
     'title' => __('Section pied de page', 'theme_31w'),
@@ -104,23 +104,35 @@ $wp_customize->add_control('footer_mission', array(
 ));
 
 
-//////////////////////////////////////////////////////// Nouvelle section 404
+//////////////////////////////////////////////////////// Section 404
 
 $wp_customize->add_section('erreur_section', array(
-  'title' => __('Section erreur', 'theme_31w'),
+  'title'    => __('Page Erreur', 'theme_31w'),
   'priority' => 30,
 ));
-}
-////////////////////////////////////////////////////////// Champ mission
-$wp_customize->add_setting('titre_erreur', array(
-  'default' => __('titre_erreur', 'theme_31w'),
-  'sanitize_callback' => 'sanitize_text_field'
+
+
+////////////////////////////////////////////////// couleur des icones 404
+$$wp_customize->add_setting('hero_icones', array(
+  'default'           => '#fff',
+  'sanitize_callback' => 'sanitize_hex_color',
 ));
 
-$wp_customize->add_control('titre_erreur', array(
-  'label' => __('Mission', 'theme_31w'),
+$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_icones', array(
+  'label'   => __('Couleur des icones', 'theme_31w'),
   'section' => 'erreur_section',
-  'type' => 'textarea',
+)));
+////////////////////////////////////////////////// couleur du texte de la zone 404
+$wp_customize->add_setting('erreur_message', array(
+  'default'           => __('Désolé, la page que vous recherchez n\'existe pas.', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field',
+));
+$wp_customize->add_control('erreur_message', array(
+  'label'   => __('Message d\'erreur', 'theme_31w'),
+  'section' => 'erreur_section',
+  'type'    => 'textarea',
 ));
 
+
+}
 add_action('customize_register', 'theme_31w_customize_register');
