@@ -10,9 +10,21 @@
     margin: 0 auto;
 
     &__titre {
+
+      width:40vw;
+      height:25vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.208);
+      h1{
+        color: $jaune;
         font-size: 2rem;
         color: $bleu;
         margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
     }
 
     &__message {
@@ -21,7 +33,20 @@
         color: black;
     }
 
-    &__navigation {
+    &__accueil{
+      display: inline-block;
+      background-color: $jaune;
+      color: $bleu;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 15px 30px;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &__destinations {
         ul {
           list-style: none;
           padding: 0;
@@ -30,28 +55,15 @@
           gap: 10px;
     
           li {
-            margin: 0;
-            background-color: white;
-            padding: 6px 12px;
-            border: 1px solid transparent;
-            border-radius: 6px;
-            transition: background-color 0.3s, border 0.3s;
-    
-            a.navigation__lien {
-              display: inline-block;
-              text-decoration: none;
-              font-size: 1rem;
-              font-weight: bold;
-              color: $bleu;
-            }
-    
-            &:hover {
-              background-color: white;
-              border: 1px solid $bleu;
-              a.navigation__lien {
-                color: $bleu;
-              }
-            }
+            display: inline-block;
+            background-color: $jaune;
+            color: $bleu;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
           }
         }
       }
