@@ -10,7 +10,6 @@
     margin: 0 auto;
 
     &__titre {
-
       width:40vw;
       height:25vh;
       display: flex;
@@ -28,9 +27,16 @@
     }
 
     &__message {
-        font-size: 1rem;
+      width:40vw;
+      height:10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p{
+        font-size: 0.8rem;
         margin-bottom: 20px;
-        color: black;
+        color: $jaune;
+      }
     }
 
     &__accueil{

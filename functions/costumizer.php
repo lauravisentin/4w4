@@ -135,14 +135,18 @@ $wp_customize->add_control('erreur_message', array(
 
 
 ////////////////////////////////////////////////// background de la zone 404
+
+// Ajout du paramètre pour l'image de fond
 $wp_customize->add_setting('erreur_background', array(
-  'default' => '',
+  'default'           => '',
   'sanitize_callback' => 'esc_url_raw',
 ));
 
+// Ajout du contrôle d'image
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_background', array(
-  'label' => __('Image en background', 'theme_31w'),
-  'section' => 'erreur_section',
+  'label'    => __('Image en background', 'theme_31w'),
+  'section'  => 'erreur_section',
+  'settings' => 'erreur_background',
 )));
 
 }
