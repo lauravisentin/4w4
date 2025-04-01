@@ -106,12 +106,6 @@ $wp_customize->add_control('footer_mission', array(
 
 //////////////////////////////////////////////////////// Section 404
 
-$wp_customize->add_section('erreur_section', array(
-  'title'    => __('Page Erreur', 'theme_31w'),
-  'priority' => 30,
-));
-
-
 ////////////////////////////////////////////////// couleur des icones 404
 $$wp_customize->add_setting('hero_icones', array(
   'default'           => '#fff',
@@ -135,7 +129,10 @@ $wp_customize->add_control('erreur_message', array(
 
 
 ////////////////////////////////////////////////// background de la zone 404
-
+$wp_customize->add_section('erreur_section', array(
+  'title'    => __('Section 404', 'theme_31w'),
+  'priority' => 30,
+));
 // Ajout du paramètre pour l'image de fond
 $wp_customize->add_setting('erreur_background', array(
   'default'           => '',

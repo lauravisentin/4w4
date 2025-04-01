@@ -27,7 +27,7 @@ Les Variables
   font-family: "Liter", serif;
 }
 
-/* ///////////////////////
+/* ///////////////////////s
 Les composants 
 /////////////////////// */
 /* /////////////////////////////////////////// menu principal */
@@ -486,36 +486,40 @@ header .entete__navigation {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
 }
 .erreur__titre {
-  width: 40vw;
   height: 25vh;
+  width: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.208);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .erreur__titre h1 {
+  max-width: 75%;
   color: #ffcc24;
-  font-size: 2rem;
-  color: rgba(0, 143, 204, 0.8274509804);
-  margin-bottom: 10px;
+  font-size: 4rem;
   font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
 }
 .erreur__message {
-  width: 40vw;
   height: 10vh;
+  width: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .erreur__message p {
-  font-size: 0.8rem;
-  margin-bottom: 20px;
+  padding: 1rem;
+  font-size: 0.9rem;
   color: #ffcc24;
+  text-align: center;
 }
-.erreur__accueil {
+.erreur__accueil, .erreur__destinations li {
   display: inline-block;
   background-color: #ffcc24;
   color: rgba(0, 143, 204, 0.8274509804);
@@ -523,9 +527,17 @@ header .entete__navigation {
   font-size: 1.5rem;
   padding: 15px 30px;
   border: none;
+  border-radius: 8px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+.erreur__accueil:hover, .erreur__destinations li:hover {
+  background-color: #f0b800;
+}
+.erreur__destinations {
+  min-width: 320px;
 }
 .erreur__destinations ul {
   list-style: none;
@@ -533,38 +545,53 @@ header .entete__navigation {
   margin: 0;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 .erreur__destinations ul li {
-  display: inline-block;
-  background-color: #ffcc24;
-  color: rgba(0, 143, 204, 0.8274509804);
-  font-weight: bold;
   font-size: 1rem;
-  padding: 10px 15px;
-  border: none;
-  text-align: center;
-  text-decoration: none;
+  font-weight: normal;
+  padding: 5px 15px;
+  text-wrap: nowrap;
 }
-.erreur .erreur__recherche input {
+.erreur__recherche input {
   background: transparent;
   border: none;
   border-bottom: 2px solid #ffcc24;
   color: #ffcc24;
-  font-size: 1rem;
+  font-size: 1.3rem;
   padding: 5px;
   outline: none;
   width: 100%;
 }
-.erreur .erreur__recherche input::placeholder {
-  color: rgba(255, 204, 36, 0.6);
+.erreur__recherche input::placeholder {
+  color: #ffcc24;
 }
-.erreur .erreur__recherche input:focus {
-  border-bottom: 2px solid #ffd857;
+.erreur__recherche input:focus {
+  border-bottom: 2px solid #ffcc24;
 }
 .erreur .recherche__bouton {
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  .erreur__titre {
+    width: 500px;
+    height: 200px;
+  }
+  .erreur__titre h1 {
+    font-size: 2.5rem;
+  }
+  .erreur__message {
+    width: 500px;
+    padding: 1rem;
+    height: 10vh;
+  }
+  .erreur__destinations ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 /* ///////////////////////
 Les bases 
 /////////////////////// */

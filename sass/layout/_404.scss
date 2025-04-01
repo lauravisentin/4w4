@@ -1,45 +1,50 @@
 .erreur {
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width:100vw;
-    height:100vh;
-    display:flex;
-    flex-direction: column;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  &__titre {
+    height: 25vh;
+    width:800px;
+    display: flex;
     align-items: center;
-    margin: 0 auto;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
 
-    &__titre {
-      width:40vw;
-      height:25vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(255, 255, 255, 0.208);
-      h1{
+    h1 {
+        max-width: 75%;
         color: $jaune;
-        font-size: 2rem;
-        color: $bleu;
-        margin-bottom: 10px;
+        font-size: 4rem;
         font-weight: bold;
-      }
-      
+        margin-bottom: 10px;
+        text-align: center;
     }
+  }
 
-    &__message {
-      width:40vw;
-      height:10vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      p{
-        font-size: 0.8rem;
-        margin-bottom: 20px;
-        color: $jaune;
+  &__message {
+    height: 10vh;
+    width:800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+      p {
+          padding:1rem;
+          font-size: 0.9rem;
+          color: $jaune;
+          text-align: center;
       }
-    }
+  }
 
-    &__accueil{
+  &__accueil,
+  &__destinations li {
       display: inline-block;
       background-color: $jaune;
       color: $bleu;
@@ -47,53 +52,77 @@
       font-size: 1.5rem;
       padding: 15px 30px;
       border: none;
+      border-radius: 8px;
       text-align: center;
       text-decoration: none;
       cursor: pointer;
-    }
+      transition: background-color 0.3s;
 
-    &__destinations {
-        ul {
+      &:hover {
+          background-color: darken($jaune, 10%);
+      }
+  }
+
+  &__destinations {
+    min-width:320px;
+      ul {
           list-style: none;
           padding: 0;
           margin: 0;
           display: flex;
           gap: 10px;
-    
-          li {
-            display: inline-block;
-            background-color: $jaune;
-            color: $bleu;
-            font-weight: bold;
+          flex-wrap: wrap;
+          
+          li{
             font-size: 1rem;
-            padding: 10px 15px;
-            border: none;
-            text-align: center;
-            text-decoration: none;
+            font-weight:normal;
+            padding: 5px 15px;
+            text-wrap:nowrap;
           }
-        }
+      }
+  }
+
+  &__recherche input {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid $jaune;
+      color: $jaune;
+      font-size: 1.3rem;
+      padding: 5px;
+      outline: none;
+      width: 100%;
+      
+      &::placeholder {
+          color: $jaune;
       }
 
-      .erreur__recherche input {
-        background: transparent;
-        border: none;
-        border-bottom: 2px solid $jaune;
-        color: $jaune;
-        font-size: 1rem;
-        padding: 5px;
-        outline: none;
-        width: 100%;
-        
-        &::placeholder {
-            color: rgba($jaune, 0.6);
-        }
-    
-        &:focus {
-            border-bottom: 2px solid lighten($jaune, 10%);
-        }
-    }
-    .recherche__bouton{
-      display:none;
-    }
-    }
+      &:focus {
+          border-bottom: 2px solid $jaune;
+      }
+  }
 
+  .recherche__bouton {
+      display: none;
+  }
+}
+
+// **Médias Queries pour mobile**
+@media screen and (max-width: 768px) {
+  .erreur__titre{
+    width:500px;
+    height:200px;
+    h1{
+      font-size: 2.5rem;
+    }
+  }
+  .erreur__message{
+   width:500px;
+   padding:1rem;
+   height:10vh;
+  }
+  .erreur__destinations ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+}
