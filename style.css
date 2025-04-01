@@ -545,6 +545,25 @@ header .entete__navigation {
   text-align: center;
   text-decoration: none;
 }
+.erreur .erreur__recherche input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ffcc24;
+  color: #ffcc24;
+  font-size: 1rem;
+  padding: 5px;
+  outline: none;
+  width: 100%;
+}
+.erreur .erreur__recherche input::placeholder {
+  color: rgba(255, 204, 36, 0.6);
+}
+.erreur .erreur__recherche input:focus {
+  border-bottom: 2px solid #ffd857;
+}
+.erreur .recherche__bouton {
+  display: none;
+}
 
 /* ///////////////////////
 Les bases 

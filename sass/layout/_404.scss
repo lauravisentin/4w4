@@ -73,5 +73,27 @@
           }
         }
       }
+
+      .erreur__recherche input {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid $jaune;
+        color: $jaune;
+        font-size: 1rem;
+        padding: 5px;
+        outline: none;
+        width: 100%;
+        
+        &::placeholder {
+            color: rgba($jaune, 0.6);
+        }
+    
+        &:focus {
+            border-bottom: 2px solid lighten($jaune, 10%);
+        }
+    }
+    .recherche__bouton{
+      display:none;
+    }
     }
 
