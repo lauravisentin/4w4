@@ -1,24 +1,20 @@
 <?php get_header() ?>
-
 <div class="boiteflex global erreur">
-    <h1 class="erreur__titre">Erreur 404</h1>
+    <h1 class="erreur__titre">Oops, vous avez échoué sur l'île 404 !</h1>
     <p class="erreur__message">
         <?php 
-        echo get_theme_mod('erreur_message', __('Désolé, la page que vous recherchez n\'existe pas.', 'theme_31w')); 
+        echo get_theme_mod('erreur_message', __('Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur \'Accueil\' pour découvrir à nouveau nos voyages d\'exception !', 'theme_31w')); 
         ?>
     </p>
 
-    <nav class="erreur__navigation">
-        <ul>
-            <li>
-                <a href="<?php echo site_url('/'); ?>" class="navigation__lien">Accueil</a>
-            </li>
-            <li>
-                <a href="<?php echo get_category_link(10); ?>" class="navigation__lien">Populaire</a>
-            </li>
-        </ul>
-    </nav>
+    <btn class="erreur__bouton__Accueil">
+        <a href="<?php echo site_url('/'); ?>" class="erreur__lien">Retour à l'accueil</a>
+    </btn>
+    <?php wp_nav_menu(array(
+        "menu" => "destinations",
+        "container" => "nav",
+        "container_class" => "erreur__destinations"
+    )); ?>
+
     <?php get_template_part("gabarit/icones"); ?>
 </div>
-
-<?php get_footer() ?>
