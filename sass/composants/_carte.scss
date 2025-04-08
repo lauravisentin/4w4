@@ -17,7 +17,9 @@
   &__image img {
     width: 100%;
     border-radius: 8px;
+    height: 200px;
     transition: transform 0.3s ease;
+    object-fit: cover;
 
     &:hover {
       transform: scale(1.03);

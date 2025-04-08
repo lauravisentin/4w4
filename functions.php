@@ -1,4 +1,5 @@
 <?php
+include_once get_template_directory().'function/genere-liste-categorie.php';
 function theme_31w_customize_register($wp_customize) {
   // Le code pour ajouter des sections, des réglages et des contrôles ira ici.
   $wp_customize->add_section('hero_section', array(
@@ -196,6 +197,17 @@ function theme_4w4_enqueue_styles() {
 wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');  
 wp_enqueue_style('mon-style-style', get_stylesheet_uri()); 
 } 
+
+function enqueue_custom_scripts() {
+  wp_enqueue_script(
+      'destination_restapi',
+      get_template_directory_uri() . '/js/destination.js',
+      array(),
+      filemtime(get_template_directory() . 
+      '/js/destination.js'),
+      true
+  );
+}
 /* 
 */
 add_action('wp_enqueue_scripts', 'theme_4w4_enqueue_styles');

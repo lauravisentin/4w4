@@ -6,6 +6,7 @@
             <h2 class="populaire__titre"><?php the_title(); ?></h2>
             
             <div class="populaire__contenu">
+                <!-- Image -->
                 <div class="populaire__image">
                     <?php
                     if (has_post_thumbnail()) {
@@ -13,13 +14,19 @@
                     }
                     ?>
                 </div>
+
+                <!-- Description -->
                 <div class="populaire__description">
                     <?php the_content(); ?>
                 </div>
+
+                <!-- Section Températures -->
+                
                 <div class="populaire__temp">
-                    <p>Température minimum&nbsp;<?php echo the_field('temperature_minimum'); ?>&#xB0;</p>
-                    <p>Température maximum&nbsp;<?php echo the_field('temperature_maximum'); ?>&#xB0;</p>
-                    <p>Température moyenne&nbsp;<?php echo the_field('temperature_moyenne'); ?>&#xB0;</p>
+                    <h3 class="populaire__temp-title">Températures</h3>
+                    <p><strong>Minimum :</strong> <?php echo esc_html(get_field('temperature_minimum')); ?>°</p>
+                    <p><strong>Maximum :</strong> <?php echo esc_html(get_field('temperature_maximum')); ?>°</p>
+                    <p><strong>Moyenne :</strong> <?php echo esc_html(get_field('temperature_moyenne')); ?>°</p>
                 </div>
             </div>
         </article>

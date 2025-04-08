@@ -106,45 +106,46 @@ $wp_customize->add_control('footer_mission', array(
 
 //////////////////////////////////////////////////////// Section 404
 
-////////////////////////////////////////////////// couleur des icones 404
-$$wp_customize->add_setting('hero_icones', array(
-  'default'           => '#fff',
-  'sanitize_callback' => 'sanitize_hex_color',
-));
-
-$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_icones', array(
-  'label'   => __('Couleur des icones', 'theme_31w'),
-  'section' => 'erreur_section',
-)));
-////////////////////////////////////////////////// couleur du texte de la zone 404
-$wp_customize->add_setting('erreur_message', array(
-  'default'           => __('Désolé, la page que vous recherchez n\'existe pas.', 'theme_31w'),
-  'sanitize_callback' => 'sanitize_text_field',
-));
-$wp_customize->add_control('erreur_message', array(
-  'label'   => __('Message d\'erreur', 'theme_31w'),
-  'section' => 'erreur_section',
-  'type'    => 'textarea',
-));
-
-
-////////////////////////////////////////////////// background de la zone 404
+// Section personnalisée pour la page 404
 $wp_customize->add_section('erreur_section', array(
-  'title'    => __('Section 404', 'theme_31w'),
+  'title' => __('Page 404', 'theme_31w'),
   'priority' => 30,
 ));
-// Ajout du paramètre pour l'image de fond
+
+// Champ pour l'image de fond
 $wp_customize->add_setting('erreur_background', array(
-  'default'           => '',
+  'default' => '',
   'sanitize_callback' => 'esc_url_raw',
 ));
 
-// Ajout du contrôle d'image
 $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'erreur_background', array(
-  'label'    => __('Image en background', 'theme_31w'),
-  'section'  => 'erreur_section',
-  'settings' => 'erreur_background',
+  'label' => __('Image en background', 'theme_31w'),
+  'section' => 'erreur_section',
 )));
+
+// Champ pour le titre personnalisé
+$wp_customize->add_setting('erreur_titre', array(
+  'default' => __('Oops, vous avez échoué sur l\'île 404 !', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_text_field',
+));
+
+$wp_customize->add_control('erreur_titre', array(
+  'label' => __('Titre de la page 404', 'theme_31w'),
+  'section' => 'erreur_section',
+  'type' => 'text',
+));
+
+// Champ pour le message personnalisé
+$wp_customize->add_setting('erreur_message', array(
+  'default' => __('Pas de panique, cher membre explorateur ! Vous avez dérivé un peu trop loin des destinations de rêve que notre club a soigneusement sélectionnées pour vous. Reprenez votre périple en cliquant sur "Accueil" pour découvrir à nouveau nos voyages d\'exception !', 'theme_31w'),
+  'sanitize_callback' => 'sanitize_textarea_field',
+));
+
+$wp_customize->add_control('erreur_message', array(
+  'label' => __('Message de la page 404', 'theme_31w'),
+  'section' => 'erreur_section',
+  'type' => 'textarea',
+));
 
 }
 add_action('customize_register', 'theme_31w_customize_register');
