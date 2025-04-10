@@ -1,55 +1,59 @@
-* {
-    margin: 0;
+*{
     box-sizing: border-box;
-    overflow-x: none;
-}
 
+}
 .global {
-    max-width: 1000px;
+    margin: 5%;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero {
-    min-height: 100vh;
-    background-image: url("images/background_MondoVoyage.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.boiteflex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
-    &__contenu {
-        padding-top: 10vh;
-        margin-left: 3vw;
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        &__titre {
-            font-weight: bold;
-            text-shadow: 0px 4px 2px rgba(206, 124, 41, 0.6);
-        }
-
-        &__description {
-            max-width: 400px;
-            margin-left: 0;
-        }
-
-        &__courriel {
-            text-decoration: none;
-            color: black;
-            margin-left: 0;
-        }
-
-        &__bouton {
-            width: 150px;
-            border-radius: 5px;
-            border: none;
-            background-color: rgba(206, 124, 41, 0.6);
-            padding: 3px;
-            text-transform: uppercase;
-        }
-
-        &__icone-app {
-            padding-top: 20px;
-        }
+.categorie__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2%;
+    width:100vw;
+    h1{
+        margin: 0;
     }
 }
+
+
+
+
+
+.promotion{
+    h1{
+        margin: 2%;
+    }
+
+    &__images {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        grid-template-rows: repeat(2, auto); 
+        gap: 5px; 
+        margin: 2%;
+    }
+
+    &__images img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; 
+    }
+}
+ 
+
+
+
+
+
+

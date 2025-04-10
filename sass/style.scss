@@ -25,16 +25,24 @@ Les composants
 @import "composants/menu";
 @import "composants/carte";
 @import "composants/recherche";
-@import "composants/inscription";
 @import "composants/galerie";
-
+@import "composants/boutons-categories";
 
 
 /* ///////////////////////
-Les composants 
+Les layouts 
 /////////////////////// */
 @import "layout/principal";
 @import "layout/entete";
 @import "layout/footer";
+@import "layout/hero";
+@import "layout/single";
+@import "layout/404";
+
+/* ///////////////////////
+Les bases 
+/////////////////////// */
+@import "base/liens";
+@import "base/simple";
 
 

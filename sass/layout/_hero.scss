@@ -1,0 +1,19 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size:larger;
+    padding-top: 10vh;
+  }
+  .hero button {
+    display: flex;
+    background-color: $bleu;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    color:white;
+  }
+  .hero button, .hero a, .hero p {
+    margin-top: 2%;
+  }

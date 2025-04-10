@@ -1,0 +1,148 @@
+/* Conteneur principal */
+.populaire {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Article */
+.populaire_article {
+  background: #fdfdfd;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 25px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  min-width:540px;
+}
+
+/* Titre */
+.populaire__titre {
+  font-size: 2em;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contenu */
+.populaire__contenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  
+}
+
+.populaire__image img {
+  min-width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Description */
+.populaire__description {
+  flex: 2;
+  min-width: 600px;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Section Températures */
+.populaire__temp {
+  flex: 1;
+  max-width: 55%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.populaire__temp-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  padding-top:0px;
+}
+
+/* Températures */
+.populaire__temp p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 5px 0;
+}
+
+.populaire__temp p strong {
+  font-weight: bold;
+  color: #0066cc; /* Remplacez $bleu par une couleur valide */
+}
+
+/* Responsive */
+@media (max-width: 1105px) {
+  .populaire__contenu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .populaire__image, .populaire__description, .populaire__temp {
+    max-width: 100%;
+  }
+
+  .populaire__image img {
+    object-fit: cover;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width:400px;
+    height:auto;
+  }
+  .populaire__description {
+    min-width: 400px;
+  }
+  /* Températures en ligne sur mobile */
+  .populaire__temp {
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .populaire__temp-title{
+    font-size: 1rem;
+  }
+
+  .populaire__temp p {
+    display: inline-block;
+    margin-right: 15px; /* Ajout d'espace entre les températures */
+  }
+}
+
+@media (max-width: 1345px) {
+  .populaire__contenu{
+    align-items: center;
+    justify-content: center;
+  }
+  .populaire__image {
+    justify-content: center;
+  }
+  .populaire__temp {
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .populaire__temp-title{
+    font-size: 1rem;
+  }
+
+  .populaire__temp p {
+    display: inline-block;
+    margin-right: 15px; /* Ajout d'espace entre les températures */
+  }
+}

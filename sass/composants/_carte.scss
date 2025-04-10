@@ -1,31 +1,60 @@
-/* *******************
-Le composant .carte
-********************** */
-
 .carte {
-  border: 1px solid #ddd;
+  border: 1px solid #f1f1f1;
   padding: 20px;
   border-radius: 8px;
-  
+  flex: 0 0 280px;
+  min-width: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0), 0 2px 6px rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
 
-  &--grande {
-    padding: 40px;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.05);
   }
-  &--petite {
-    padding: 20px;
-  }
+
   &__image img {
-    max-width: 100%;
+    max-height: 160px;
+    max-width: 240px;
     border-radius: 8px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   &__contenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    height: 100%
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__texte{
+    position: sticky;
+    margin: 0;
+    padding: 0;
+    bottom: 20px;
   }
 
   &__titre {
     font-size: 24px;
     color: #333;
+    transition: color 0.3s ease;
   }
 
   &__description {
@@ -35,18 +64,51 @@ Le composant .carte
 
   &__bouton {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: $bleu;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-
-    &--actif {
-      background-color: #0056b3;
-    }
+    width: 80px;
+    transition: background-color 0.3s, transform 0.2s ease;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: $jaune;
+      color: white;
+      transform: translateY(-3px);
+    }
+  }
+
+  &__categories {
+    .post-categories {
+      display: inline-flex;
+      flex-direction: row;
+      gap: 10px;
+      padding-left: 0;
+      list-style-type: none;
+      max-width: 100%;
+
+      & li {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        max-width: 100%;
+
+        & a {
+          padding: 8px 15px;
+          background-color: $orange;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: $jaune;
+          }
+        }
+      }
     }
   }
 }
