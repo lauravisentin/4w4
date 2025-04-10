@@ -1,1 +1,10 @@
-/*# sourceMappingURL=boutons-categories.css.map */
+.categorie__ul__li {
+  background-color: var(--bleu);
+  color: white;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+}/*# sourceMappingURL=boutons-categories.css.map */

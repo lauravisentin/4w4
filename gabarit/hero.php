@@ -15,7 +15,12 @@ $hero_courriel = get_theme_mod('hero_courriel', 'Default Title');
 </style>`
 
 
-<section class="hero" style="background-image: url('<?php echo $hero_background ?>'); background-repeat: no-repeat" >
+<section class="hero">
+    <div class="hero__carousel" style="background-image: url('<?php echo $hero_background ?>')";></div>
+    <div class="hero__carousel" style="background-image: url('<?php echo $hero_background ?>')";></div>
+    <div class="hero__carousel" style="background-image: url('<?php echo $hero_background ?>')";></div>
+
+    
         <div class="hero__contenu global">
             <h1 class="hero__titre hero__couleur" >
                 <?php  bloginfo('name'); ?>
