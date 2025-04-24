@@ -16,10 +16,10 @@ function categories_liste($parent_slug){
     ));
     // Vérifier s'il y a des sous-catégories
     if (!empty($sous_categories)) {
-        echo '<ul class="categorie__ul">';
+        echo '<ul class="categorie__list">';
         foreach ($sous_categories as $categorie) {
         // Afficher le nom de chaque sous-catégorie
-            echo '<li  data-id="' . esc_html($categorie->term_id) . '" class="categorie__ul__li">' . esc_html($categorie->name) . '</li>';
+            echo '<li  data-id="' . esc_html($categorie->term_id) . '" class="categorie__list__item">' . esc_html($categorie->name) . '</li>';
         }
         echo '</ul>';
     } 
