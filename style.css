@@ -219,7 +219,7 @@ Les composants
   justify-content: center;
   padding-left: 20px;
 }
-.categorie__list__item {
+.categorie__item {
   background-color: rgba(0, 143, 204, 0.8274509804);
   color: white;
   padding: 10px 20px;
@@ -230,7 +230,7 @@ Les composants
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
 }
-.categorie__list__item:hover {
+.categorie__item:hover {
   background-color: #0056b3;
 }
 
