@@ -1,10 +1,81 @@
 .hero {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-size:larger;
-    padding-top: 10vh;
+
+    position : relative;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    &__carrousel{
+      background-size: cover;
+      position : absolute;
+      min-height: 100vh;
+      width : 100%;
+      background-position: center;
+      z-index : -1;
+      opacity : 0;
+      &--active { 
+       opacity : 1;
+      }
+      padding:0;
+   }
+   &__radio {
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+
+    &__input {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            border-color: $orange;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $orange;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        &:checked::after {
+            opacity: 1;
+        }
+
+        &.active {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+ 
+ 
+   &__contenu {
+       z-index : 9;
+   }
   }
+
+
   .hero button {
     display: flex;
     background-color: $bleu;
@@ -17,3 +88,7 @@
   .hero button, .hero a, .hero p {
     margin-top: 2%;
   }
+
+  
+  
+  

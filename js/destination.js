@@ -5,7 +5,6 @@
 
     function monfetch() {
         const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
-        console.log('API URL :', apiUrl);
 
         fetch(apiUrl)
             .then(response => response.json())

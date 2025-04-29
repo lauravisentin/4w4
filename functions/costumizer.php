@@ -52,16 +52,19 @@ $wp_customize->add_control('hero_telephone', array(
   'type' => 'text',
 ));
 
-////////////////////////////////////////////////// image en background de la zone hero
-$wp_customize->add_setting('hero_background', array(
-  'default' => '',
-  'sanitize_callback' => 'esc_url_raw',
-));
+//////////////////////////////// ajout de la données image en background
 
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background', array(
-  'label' => __('Image en background', 'theme_31w'),
-  'section' => 'hero_section',
-)));
+for ($k = 0; $k<3 ; $k++) {
+  $wp_customize->add_setting('hero_background_' . $k, array(
+    'default' => '',
+    'sanitize_callback' => 'esc_url_raw',
+  ));
+  ///////////////////////////////// ajout du contrôle de la donnée
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $k, array(
+    'label' => __('Image en arrière plan ' . ($k+1) , 'theme_tp'),
+    'section' => 'hero_section',
+  )));
+}
 ////////////////////////////////////////////////// couleur du texte de la zone hero
 $wp_customize->add_setting('hero_couleur', array(
   'default' => '',
