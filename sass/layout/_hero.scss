@@ -1,104 +1,85 @@
+// hero.scss
+
 .hero {
     display: flex;
     flex-direction: column;
-    font-size:larger;
-
-    position : relative;
+    font-size: larger;
+    position: relative;
     background-repeat: no-repeat;
     min-height: 100vh;
-
-    &__carrousel{
-        background-size: cover;
-        position : absolute;
-        min-height: 100vh;
-        width : 100%;
-        background-position: center;
-        z-index : -1;
-        transform: translateX(100%);
-        opacity: 0;
-        transition: transform 0.8s ease, opacity 0.8s ease;
-        &--active {
-            transform: translateX(0%);
-            opacity: 1;
-            z-index: 1;
-          }
-        
-          &--left {
-            transform: translateX(-100%);
-            opacity: 0;
-          }
-        
-          &--right {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-   }
-
-   .hero__radio {
-  position: absolute;
-  width: 100%;
-  bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding-bottom: 2rem;
-  z-index: 10; // <-- ici !
-
-  &__input {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      border-color: $orange;
-    }
-
-    &::after {
-      content: '';
+  
+    &__carrousel {
+      background-size: cover;
       position: absolute;
-      top: 4px;
-      left: 4px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: $orange;
+      min-height: 100vh;
+      width: 100%;
+      background-position: center;
+      z-index: -1;
       opacity: 0;
-      transition: all 0.3s ease;
+      padding: 0;
     }
-
-    &:checked::after,
-    &.active::after {
-      opacity: 1;
+  
+    &__radio {
+      position: absolute;
+      width: 100%;
+      bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      z-index: 10;
+  
+      &__input {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+  
+        &:hover {
+          border-color: $orange;
+        }
+  
+        &::after {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: $orange;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+  
+        &:checked::after,
+        &.active::after {
+          opacity: 1;
+        }
+      }
     }
-}
-}
-
- 
- 
-   &__contenu {
-       z-index : 9;
-   }
-  }
-
-
-  .hero button {
-    display: flex;
-    background-color: $bleu;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    color:white;
-  }
-  .hero button, .hero a, .hero p {
-    margin-top: 2%;
-  }
-
   
+    &__contenu {
+      z-index: 9;
+    }
   
+    // Styles pour les autres éléments comme le bouton, l'iconographie, etc.
+    button {
+      display: flex;
+      background-color: $bleu;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      color: white;
+    }
+  
+    button, a, p {
+      margin-top: 2%;
+    }
+  }
   

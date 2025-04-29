@@ -480,24 +480,10 @@ header .entete__navigation {
   width: 100%;
   background-position: center;
   z-index: -1;
-  transform: translateX(100%);
   opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  padding: 0;
 }
-.hero__carrousel--active {
-  transform: translateX(0%);
-  opacity: 1;
-  z-index: 1;
-}
-.hero__carrousel--left {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-.hero__carrousel--right {
-  transform: translateX(100%);
-  opacity: 0;
-}
-.hero .hero__radio {
+.hero__radio {
   position: absolute;
   width: 100%;
   bottom: 2rem;
@@ -507,7 +493,7 @@ header .entete__navigation {
   padding-bottom: 2rem;
   z-index: 10;
 }
-.hero .hero__radio__input {
+.hero__radio__input {
   position: relative;
   width: 20px;
   height: 20px;
@@ -517,10 +503,10 @@ header .entete__navigation {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.hero .hero__radio__input:hover {
+.hero__radio__input:hover {
   border-color: #ffb229;
 }
-.hero .hero__radio__input::after {
+.hero__radio__input::after {
   content: "";
   position: absolute;
   top: 4px;
@@ -532,13 +518,12 @@ header .entete__navigation {
   opacity: 0;
   transition: all 0.3s ease;
 }
-.hero .hero__radio__input:checked::after, .hero .hero__radio__input.active::after {
+.hero__radio__input:checked::after, .hero__radio__input.active::after {
   opacity: 1;
 }
 .hero__contenu {
   z-index: 9;
 }
-
 .hero button {
   display: flex;
   background-color: rgba(0, 143, 204, 0.8274509804);
@@ -548,7 +533,6 @@ header .entete__navigation {
   margin-bottom: 20px;
   color: white;
 }
-
 .hero button, .hero a, .hero p {
   margin-top: 2%;
 }
@@ -746,6 +730,23 @@ header .entete__navigation {
 }
 .erreur__navigation ul li:hover a.navigation__lien {
   color: rgba(0, 143, 204, 0.8274509804);
+}
+
+.hero__carrousel {
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.hero__carrousel--active {
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 1;
+}
+.hero__carrousel--left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.hero__carrousel--right {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 /* ///////////////////////
