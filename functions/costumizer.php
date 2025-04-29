@@ -113,7 +113,7 @@ $wp_customize->add_section('erreur_section', array(
 
 
 ////////////////////////////////////////////////// couleur des icones 404
-$$wp_customize->add_setting('hero_icones', array(
+$wp_customize->add_setting('hero_icones', array(
   'default'           => '#fff',
   'sanitize_callback' => 'sanitize_hex_color',
 ));

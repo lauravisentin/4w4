@@ -1,15 +1,11 @@
 (function() {
-    // Définition de l'ID de la catégorie à afficher
     let categoryId = 3;
-    // Récupération de l'URL actuelle du site
-    const domaine = window.location.href;
-    // Sélection de tous les éléments de la liste des catégories
+    const domaine = window.location.origin + "/4w4";
     const categorieUlLi = document.querySelectorAll(".categorie__item");
 
-    // Fonction pour récupérer et afficher les articles de la catégorie
     function monfetch() {
-        // Construction de l'URL de l'API pour récupérer les articles de la catégorie
-        const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${categoryId}`;
+        const apiUrl = `${domaine}/wp-json/wp/v2/posts?categories=${categoryId}`;
+        console.log('API URL :', apiUrl);
 
         fetch(apiUrl)
             .then(response => response.json())
@@ -39,7 +35,8 @@
 
                     // Création de l'icône (bouton radio)
                     const iconButton = document.createElement('img');
-                    iconButton.src = `${domaine}wp-content/themes/tp1/images/3points.png`;
+                    iconButton.src = `${domaine}/wp-content/themes/tp1/images/3points.png`;
+
                     iconButton.alt = 'Icône';
                     iconButton.classList.add('destination__icon', 'destination__icon-radio');
 
