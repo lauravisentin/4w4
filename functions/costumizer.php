@@ -52,17 +52,32 @@ $wp_customize->add_control('hero_telephone', array(
   'type' => 'text',
 ));
 
-//////////////////////////////// ajout de la données image en background
+////////////////////////////////////////////////////////// Carrousel
+// Champ pour définir le nombre d'images
+$wp_customize->add_setting('hero_background_count', array(
+  'default' => 3,
+  'sanitize_callback' => 'absint',
+));
 
-for ($k = 0; $k<3 ; $k++) {
+$wp_customize->add_control('hero_background_count', array(
+  'label' => __('Nombre d\'images en arrière-plan', 'theme_tp'),
+  'section' => 'hero_section',
+  'type' => 'number',
+  'input_attrs' => array('min' => 1, 'max' => 10),
+));
+
+// Récupération du nombre d’images
+$count = get_theme_mod('hero_background_count', 3);
+
+for ($k = 0; $k < $count; $k++) {
   $wp_customize->add_setting('hero_background_' . $k, array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw',
   ));
-  ///////////////////////////////// ajout du contrôle de la donnée
+
   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_background_' . $k, array(
-    'label' => __('Image en arrière plan ' . ($k+1) , 'theme_tp'),
-    'section' => 'hero_section',
+      'label' => __('Image en arrière-plan ' . ($k + 1), 'theme_tp'),
+      'section' => 'hero_section',
   )));
 }
 ////////////////////////////////////////////////// couleur du texte de la zone hero
