@@ -480,13 +480,24 @@ header .entete__navigation {
   width: 100%;
   background-position: center;
   z-index: -1;
+  transform: translateX(100%);
   opacity: 0;
-  padding: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 .hero__carrousel--active {
+  transform: translateX(0%);
   opacity: 1;
+  z-index: 1;
 }
-.hero__radio {
+.hero__carrousel--left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.hero__carrousel--right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.hero .hero__radio {
   position: absolute;
   width: 100%;
   bottom: 2rem;
@@ -494,8 +505,9 @@ header .entete__navigation {
   justify-content: center;
   gap: 2rem;
   padding-bottom: 2rem;
+  z-index: 10;
 }
-.hero__radio__input {
+.hero .hero__radio__input {
   position: relative;
   width: 20px;
   height: 20px;
@@ -505,10 +517,10 @@ header .entete__navigation {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.hero__radio__input:hover {
+.hero .hero__radio__input:hover {
   border-color: #ffb229;
 }
-.hero__radio__input::after {
+.hero .hero__radio__input::after {
   content: "";
   position: absolute;
   top: 4px;
@@ -520,10 +532,7 @@ header .entete__navigation {
   opacity: 0;
   transition: all 0.3s ease;
 }
-.hero__radio__input:checked::after {
-  opacity: 1;
-}
-.hero__radio__input.active::after {
+.hero .hero__radio__input:checked::after, .hero .hero__radio__input.active::after {
   opacity: 1;
 }
 .hero__contenu {
