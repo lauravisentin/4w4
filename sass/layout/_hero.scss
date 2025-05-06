@@ -1,22 +1,79 @@
 // hero.scss
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    font-size: larger;
-    position: relative;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    &__contenu{
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      width: calc(100% - 2rem);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+
+      .hero__titre {
+        font-size: 3rem;
+        color: $bleu;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      .hero__description {
+        font-size: 1.5rem;
+        color: $bleu-foncer;
+        margin-bottom: 1.5rem;
+      }
+      .hero__courriel {
+        font-size: 1.25rem;
+        color: $orange;
+        text-decoration: none;
+        margin-bottom: 1.5rem;
+        &:hover {
+          color: $bleu-foncer;
+        }
+      }
+      p:last-of-type {
+        font-size: 1rem;
+        color: $bleu-foncer;
+        margin-top: 2rem;
+        font-style: italic;
+      }
+    }
   
     &__carrousel {
-      background-size: cover;
       position: absolute;
-      min-height: 100vh;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      background-size: cover;
       background-position: center;
-      z-index: -1;
       opacity: 0;
-      padding: 0;
+      transition: opacity 0.8s ease;
+      z-index: 0;
+
+      &--active {
+        opacity: 1;
+        z-index: 0;
+      }
     }
   
     &__radio {
@@ -62,24 +119,18 @@
         }
       }
     }
-  
+    
+    &__icone{
+      padding-top:10px;
+      padding-bottom:10px;
+
+      img{
+        padding-right:3px;
+      }
+    }
+    
     &__contenu {
       z-index: 9;
-    }
-  
-    // Styles pour les autres éléments comme le bouton, l'iconographie, etc.
-    button {
-      display: flex;
-      background-color: $bleu;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 20px;
-      margin-bottom: 20px;
-      color: white;
-    }
-  
-    button, a, p {
-      margin-top: 2%;
     }
   }
   

@@ -28,10 +28,12 @@ for ($k = 0; $k < $hero_background_count; $k++) {
     <div class="hero__radio">
         <?php for ($i = 0; $i < $hero_background_count; $i++): ?>
             <input class="hero__radio__input" 
-                   data-id_radio="<?php echo $i; ?>" 
-                   type="radio" 
-                   name="carroussel" 
-                   <?php echo $i === 0 ? 'checked="checked"' : ''; ?>>
+                data-id_radio="<?php echo $i; ?>" 
+                type="radio" 
+                name="carroussel" 
+                id="hero_radio_<?php echo $i; ?>"
+                <?php echo $i === 0 ? 'checked="checked"' : ''; ?>>
+            <label for="hero_radio_<?php echo $i; ?>" class="hero__radio__label"></label>
         <?php endfor; ?>
     </div>
 
@@ -39,7 +41,6 @@ for ($k = 0; $k < $hero_background_count; $k++) {
         <h1 class="hero__titre hero__couleur"><?php bloginfo('name'); ?></h1>
         <p class="hero__description"><?php bloginfo('description'); ?></p>
         <a href="" class="hero__courriel"><?php echo esc_html($hero_courriel); ?></a>
-        <button class="hero__bouton">Inscription</button>
         <?php get_template_part("gabarit/icones"); ?>
         <p>Auteur: <?php echo esc_html($hero_auteur); ?></p>
     </div>
