@@ -594,9 +594,7 @@ header .entete__navigation {
 .populaire_article {
   background: #fdfdfd;
   border-radius: 12px;
-  border: 1px solid #ddd;
   padding: 25px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   min-width: 540px;
 }
 
@@ -792,6 +790,26 @@ header .entete__navigation {
 .hero__carrousel--active {
   opacity: 1;
   z-index: 1;
+}
+
+.hero__couleur {
+  transition: color 0.6s ease;
+}
+
+.hero--theme-0 .hero__couleur {
+  color: rgba(0, 143, 204, 0.8274509804);
+}
+
+.hero--theme-1 .hero__couleur {
+  color: #ffb229;
+}
+
+.hero--theme-2 .hero__couleur {
+  color: #81d4ff;
+}
+
+.hero--theme-3 .hero__couleur {
+  color: rgba(0, 97, 139, 0.8274509804);
 }
 
 /* ///////////////////////
