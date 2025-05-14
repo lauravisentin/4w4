@@ -15,7 +15,7 @@
         </div>
     </section>
     <!-- //////////////////////////////////// section destination REST-API -->
-    <?php categories_liste("destination"); ?>
+<?php categorie_par_destination("Populaire"); ?>
     <section class="destination">
         <div class="destination__list"></div>
     </section>

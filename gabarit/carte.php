@@ -18,8 +18,21 @@
         </div>
         <?php if (!is_category()) : ?>
             <div class="carte__categories">
-                <?php the_category(); ?>
+                <ul class="post-categories">
+                    <?php
+                    $categories = get_the_category();
+                    $destination = get_category_by_slug('destination');
+                    if ($destination) {
+                        foreach ($categories as $cat) {
+                            if ($cat->category_parent === $destination->term_id && $cat->slug !== 'populaire') {
+                                echo '<li><a href="' . esc_url(get_category_link($cat->term_id)) . '">' . esc_html($cat->name) . '</a></li>';
+                            }
+                        }
+                    }
+                    ?>
+                </ul>
             </div>
+
         <?php endif; ?>
         
     </div>
