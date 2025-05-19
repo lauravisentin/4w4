@@ -5,3 +5,13 @@ Ce thème vise à optimiser la mise en valeur de contenus dédiés à différent
 Auteur: Laura Visentin
 Github Pages: https://lauravisentin.github.io/4w4/
 ###Lien WHC: https://gftnth00.mywhc.ca/4w4_37/
+
+
+##:A FAIRE
+- Menu burger
+- Liste catégories adaptatif
+- Vague footer
+- Menu category css
+- Réduire texte Croisière
+- Ajouter images pour chaque catégorie (fond)
+- Optionnel: changer slogan dans carousel animation

@@ -63,20 +63,20 @@
   }
 
   &__bouton {
-    padding: 10px 20px;
-    background-color: $bleu;
-    color: #fff;
+    // padding: 10px 20px;
+    // background-color: $bleu;
+    color: $bleu;
     border: none;
-    border-radius: 4px;
+    // border-radius: 4px;
     cursor: pointer;
     width: 80px;
-    transition: background-color 0.3s, transform 0.2s ease;
+    // transition: background-color 0.3s, transform 0.2s ease;
 
-    &:hover {
-      background-color: $jaune;
-      color: white;
-      transform: translateY(-3px);
-    }
+    // &:hover {
+    //   background-color: $jaune;
+    //   color: white;
+    //   transform: translateY(-3px);
+    // }
   }
 
   &__categories {

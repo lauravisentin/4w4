@@ -113,19 +113,10 @@ Les composants
   color: #666;
 }
 .carte__bouton {
-  padding: 10px 20px;
-  background-color: rgba(0, 143, 204, 0.8274509804);
-  color: #fff;
+  color: rgba(0, 143, 204, 0.8274509804);
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   width: 80px;
-  transition: background-color 0.3s, transform 0.2s ease;
-}
-.carte__bouton:hover {
-  background-color: #ffcc24;
-  color: white;
-  transform: translateY(-3px);
 }
 .carte__categories .post-categories {
   display: inline-flex;
@@ -223,6 +214,8 @@ Les composants
   background-color: rgba(0, 143, 204, 0.8274509804);
   color: white;
   padding: 10px 20px;
+  max-height: 35px;
+  min-width: 165px;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
@@ -232,6 +225,9 @@ Les composants
 }
 .categorie__item:hover {
   background-color: #0056b3;
+}
+.categorie__menu {
+  width: 100vw;
 }
 
 .destination__list {
@@ -408,7 +404,6 @@ header .entete__navigation {
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px;
-  background-color: #81d4ff;
   color: black;
 }
 .piedpage section {

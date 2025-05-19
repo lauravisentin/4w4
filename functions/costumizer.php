@@ -7,7 +7,6 @@ function theme_31w_customize_register($wp_customize) {
 ));
 //////////////////////////////////////////////////////// l'auteur
 $wp_customize->add_setting('hero_auteur', array(
-  'default' => __('Laura Visentin', 'theme_31w'),
   'sanitize_callback' => 'sanitize_text_field'
 ));
 
@@ -19,7 +18,6 @@ $wp_customize->add_control('hero_auteur', array(
 
 //////////////////////////////////////////////////////// Le courriel
 $wp_customize->add_setting('hero_courriel', array(
-  'default' => __('info@cmaisonneuve.qc.ca', 'theme_31w'),
   'sanitize_callback' => 'sanitize_text_field'
 ));
 
@@ -28,6 +26,7 @@ $wp_customize->add_control('hero_courriel', array(
   'section' => 'hero_section',
   'type' => 'text',
 ));
+
 //////////////////////////////////////////////////////// L'adresse'
 $wp_customize->add_setting('hero_adresse', array(
   'default' => __('3800 R. Sherbrooke E, Montréal, QC H1X 2A2', 'theme_31w'),
@@ -108,6 +107,11 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_i
   $wp_customize->add_section('footer_section', array(
     'title' => __('Section pied de page', 'theme_31w'),
     'priority' => 30,
+));
+//////////////////////////////////////////////////////// couleur du pied de page
+$wp_customize->add_setting('footer_couleur', array(
+  'default' => '#00a',
+  'sanitize_callback' => 'sanitize_hex_color',
 ));
 ////////////////////////////////////////////////////////// Champ mission
 $wp_customize->add_setting('footer_mission', array(

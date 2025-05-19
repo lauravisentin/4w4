@@ -14,6 +14,8 @@
             background-color: $bleu;
             color: white;
             padding: 10px 20px;
+            max-height: 35px;
+            min-width: 165px;
             border-radius: 5px;
             cursor: pointer;
             text-align: center;
@@ -25,6 +27,9 @@
                 background-color: #0056b3;
             }
         }
+    &__menu{
+        width:100vw;
+    }
 }
 
 .destination {

@@ -1,13 +1,17 @@
-<footer>
+<footer style="position: relative;">
     <?php
         $footer_mission = get_theme_mod('footer_mission', 'Default Title');
         $footer_adresse = get_theme_mod('footer_adresse', 'Default Title');
         $footer_telephone = get_theme_mod('footer_telephone', 'Default Title');
+                $footer_couleur = get_theme_mod('footer_couleur', '#81d4ff');
 
+
+        // Appelle la fonction pour afficher les vagues
+        genere_vague($footer_couleur);
     ?>
 
-    <div class="piedpage global">
-
+    <!-- <div class="piedpage global"> -->
+    <div class="piedpage">
         <section class="piedpage__s1">
             <h3>Liens externes</h3>
             <?php wp_nav_menu(array(
