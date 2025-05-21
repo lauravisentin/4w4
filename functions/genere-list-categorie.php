@@ -3,25 +3,26 @@
  * Génère une liste de catégories en excluant une catégorie spécifique
  * @param string $cat_a_retirer Le nom (ou slug) de la catégorie à exclure (insensible à la casse)
  */
-function categorie_par_destination($cat_a_retirer) {
-    // Récupère toutes les catégories visibles avec au moins un article
-    $categories = get_categories(array(
-        'hide_empty' => true,
+function categories_liste($parent_slug){
+    // Récupérer la catégorie parente à partir de son slug
+    $parent_category = get_category_by_slug($parent_slug);
+    // Vérifier si la catégorie parente existe
+    if ($parent_category) {
+        $parent_id = $parent_category->term_id;
+        // Récupérer les sous-catégories de "destination"
+        $sous_categories = get_categories(array(
+            'parent' => $parent_id, // Filtrer par le parent "destination"
+            'hide_empty' => true, // Ne pas afficher les catégories vides
     ));
 
-    if (!empty($categories)) {
-        echo '<ul class="categorie__list">';
-        foreach ($categories as $cat) {
-            if (!$cat_a_retirer || strtolower($cat->name) !== strtolower($cat_a_retirer)) {
-                echo '<li class="categorie__item" data-id="' . esc_attr($cat->term_id) . '">';
-                if (is_front_page()) {
-                    echo '<span class="categorie__item-link" data-id="' . esc_attr($cat->term_id) . '">' . esc_html($cat->name) . '</span>';
-                } else {
-                    echo '<a href="' . esc_url(get_category_link($cat->term_id)) . '">' . esc_html($cat->name) . '</a>';
-                }
-                echo '</li>';
-            }
+        // Vérifier s'il y a des sous-catégories
+        if (!empty($sous_categories)) {
+            echo '<ul class="categorie__list">';
+        foreach ($sous_categories as $categorie) {
+            // Afficher le nom de chaque sous-catégorie
+            echo '<li  data-category_id="' . esc_html($categorie->term_id) . '" class="categorie__item">' . esc_html($categorie->name) . '</li>';
         }
         echo '</ul>';
+        }
     }
 }

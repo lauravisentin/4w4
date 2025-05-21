@@ -397,13 +397,20 @@ header .entete__navigation {
   }
 }
 
+footer {
+  position: absolute;
+  width: 100%;
+}
+
 .piedpage {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px;
+  z-index: 10;
   color: black;
 }
 .piedpage section {
@@ -458,6 +465,15 @@ header .entete__navigation {
     flex-direction: row;
     gap: 0 20px;
   }
+}
+
+.vague {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 0;
 }
 
 .hero {

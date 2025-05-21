@@ -1,10 +1,18 @@
+footer{
+    position:absolute;
+    width: 100%;
+}
+
 .piedpage {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
   padding: 40px;
+  z-index:10;
+
 //   background-color: $azure;
   color: black;
 
@@ -71,4 +79,13 @@
         }
     }
   }
+}
+
+.vague{
+position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    z-index: 0;
 }

@@ -3,7 +3,7 @@
 <?php get_template_part("gabarit/hero"); ?>
 
 <!-- //////////////////////////////////// section destination REST-API -->
-<?php categorie_par_destination("populaire");?>
+<?php categories_liste("destination");?>
 
 <section class="destination">
     <div class="destination__list"></div>
