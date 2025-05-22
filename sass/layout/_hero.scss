@@ -120,12 +120,18 @@
       }
     }
     
-    &__icone{
-      padding-top:10px;
-      padding-bottom:10px;
+    &__icones{
+      list-style: none; 
+      display: flex; 
+      justify-content: center;
+      gap: 10px;
+      padding-left: 0;
 
-      img{
-        padding-right:3px;
+
+      &__icon{
+        padding:3px;
+        width: 32px; 
+        height: 32px
       }
     }
     

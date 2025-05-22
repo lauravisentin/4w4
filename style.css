@@ -236,6 +236,7 @@ Les composants
   gap: 20px;
   padding: 20px;
   margin-top: 20px;
+  z-index: 100;
 }
 .destination__item {
   padding: 20px;
@@ -600,12 +601,17 @@ footer {
 .hero__radio__input:checked::after, .hero__radio__input.active::after {
   opacity: 1;
 }
-.hero__icone {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.hero__icones {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-left: 0;
 }
-.hero__icone img {
-  padding-right: 3px;
+.hero__icones__icon {
+  padding: 3px;
+  width: 32px;
+  height: 32px;
 }
 .hero__contenu {
   z-index: 9;

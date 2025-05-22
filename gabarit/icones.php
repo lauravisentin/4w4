@@ -1,11 +1,31 @@
- <?php 
-    $hero_icones = ltrim(get_theme_mod('hero_icones', '#fff'), '#');
- ?>
+<?php 
+// Récupère la couleur des icônes depuis le Customizer
+$couleur_icones = get_theme_mod('hero_icones', '#ffffff'); 
 
-<div class="hero__icone" >
-    <img src="https://s2.svgbox.net/social.svg?ic=facebook&color=<?php echo $hero_icones; ?>" width="20" height="20">
-    <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=<?php echo $hero_icones; ?>" width="20" height="20">
-    <img src="https://s2.svgbox.net/social.svg?ic=stackoverflow&color=<?php echo $hero_icones; ?>" width="20" height="20">
-    <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=<?php echo $hero_icones; ?>" width="20" height="20">
-</div>
+// Définir un tableau des réseaux sociaux à afficher
+$icones = array('behance', 'linkedin', 'github');
 
+// Affichage des icônes sous forme de liste non ordonnée
+echo '<ul class="hero__icones">';
+
+foreach ($icones as $social) {
+    // Récupère l'URL de l'icône et l'image associée
+    $url = get_theme_mod("icone_{$social}_url");
+    $icon = get_theme_mod("icone_{$social}_icon");
+
+    // Vérifie que l'URL et l'image sont définis avant d'afficher l'icône
+    if ($url && $icon) {
+        echo '<li>';
+        echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
+        
+        // Affichage de l'image de l'icône
+        echo '<img src="' . esc_url($icon) . '" alt="' . esc_attr($social) . ' icon" class="hero__icones__icon">';
+        
+        echo '</a>';
+        echo '</li>';
+    }
+}
+
+// Fermeture de la liste
+echo '</ul>';
+?>

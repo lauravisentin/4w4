@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon-96x96.png" type="image/png">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png" type="image/png">
     <title>Club de voyage</title>
     <?php wp_head() ?>
     

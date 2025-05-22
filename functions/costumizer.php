@@ -82,7 +82,7 @@ for ($k = 0; $k < $count; $k++) {
 ////////////////////////////////////////////////// couleur du texte de la zone hero
 $wp_customize->add_setting('hero_couleur', array(
   'default' => '',
-  'sanitize_callback' => 'esc_url_raw',
+  'sanitize_callback' => 'sanitize_hex_color',
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_couleur', array(
@@ -93,7 +93,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_c
 ////////////////////////////////////////////////// couleur des icones hero
 $wp_customize->add_setting('hero_icones', array(
   'default' => '',
-  'sanitize_callback' => 'esc_url_raw',
+  'sanitize_callback' => 'sanitize_hex_color',
 ));
 
 $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_icones', array(
@@ -101,7 +101,33 @@ $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hero_i
   'section' => 'hero_section',
 )));
 
+$socials = array('behance', 'linkedin', 'github');
 
+foreach ($socials as $social) {
+    // Champ URL
+    $wp_customize->add_setting("icone_{$social}_url", array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control("icone_{$social}_url", array(
+        'label' => ucfirst($social) . ' URL',
+        'section' => 'hero_section',
+        'type' => 'url',
+    ));
+
+    // Champ image (icône)
+    $wp_customize->add_setting("icone_{$social}_icon", array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, "icone_{$social}_icon", array(
+        'label' => ucfirst($social) . ' Icône',
+        'section' => 'hero_section',
+        'settings' => "icone_{$social}_icon",
+    )));
+}
 //////////////////////////////////////////////////////// Section footer
 
   $wp_customize->add_section('footer_section', array(

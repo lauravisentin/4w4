@@ -1,6 +1,4 @@
 (function(){
-    console.log("destination.js");
-
     let categoryId = 3;
     const domaine = document.querySelector('base').href;
     let selectedIcon = null;
@@ -10,12 +8,10 @@
 
     function parcourir_bouton() {
         const categorie__ul__li = document.querySelectorAll(".categorie__item");
-        console.log("categorie__item.length = ", categorie__ul__li.length);
 
         categorie__ul__li.forEach(elm => {
             elm.addEventListener('mousedown', function() {
                 console.log(elm.tagName);
-                console.log("elm.dataset.category_id = ", elm.dataset.category_id);
                 mon_fetch(elm.dataset.category_id);
             });
         });
