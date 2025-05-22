@@ -426,12 +426,27 @@ footer {
   text-transform: uppercase;
   color: black;
 }
+.piedpage__s1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.piedpage__s1__image img {
+  min-width: 200px;
+  max-width: 300px;
+  padding: 30px;
+  border-radius: 40px;
+}
 .piedpage__s2__adresse {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .piedpage__s2__adresse__coord, .piedpage__s2__adresse__tel, .piedpage__s2__adresse__recherche {
+  display: flex;
+  justify-content: center;
   padding: 5px 0;
 }
 .piedpage__s3__menu {

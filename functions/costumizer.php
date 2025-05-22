@@ -113,6 +113,18 @@ $wp_customize->add_setting('footer_couleur', array(
   'default' => '#00a',
   'sanitize_callback' => 'sanitize_hex_color',
 ));
+
+$wp_customize->add_setting('footer_image', array(
+    'default' => '',
+    'transport' => 'refresh',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_image', array(
+    'label'    => __('Image de destination dans le footer', 'mon_theme'),
+    'section'  => 'footer_section',
+    'settings' => 'footer_image',
+)));
+
 ////////////////////////////////////////////////////////// Champ mission
 $wp_customize->add_setting('footer_mission', array(
   'default' => __('Mission du club de voyage', 'theme_31w'),

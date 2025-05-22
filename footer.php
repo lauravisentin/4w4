@@ -21,7 +21,15 @@
                 "container" => "nav",
                 "container_class" => "piedpage__s1__externe"
             )); ?>
-            <?php get_template_part("gabarit/icones"); ?>
+            <?php get_template_part("gabarit/icones");  ?>
+
+            <?php   $piedpage_image = get_theme_mod('footer_image');
+                if($piedpage_image){
+                    echo '<div class="piedpage__s1__image">';
+                    echo '<img src="' . esc_url($piedpage_image) . '" alt="Image de destination">';
+                    echo '</div>';
+                }
+            ?>
         </section>
 
         <section class="piedpage__s2">
