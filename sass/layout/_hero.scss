@@ -58,6 +58,7 @@
       }
     }
   
+    // Caroussel d'image (géré par JavaScript)
     &__carrousel {
       position: absolute;
       top: 0;
@@ -76,6 +77,7 @@
       }
     }
   
+    // Radio buttons pour le carrousel
     &__radio {
       position: absolute;
       width: 100%;
@@ -120,6 +122,7 @@
       }
     }
     
+    // Liste d'icônes des réseaux sociaux
     &__icones{
       list-style: none; 
       display: flex; 

@@ -1,3 +1,4 @@
+// Une carte pour chque destination
 .carte {
   border: 1px solid #f1f1f1;
   padding: 20px;
@@ -35,6 +36,7 @@
     height: 100%
   }
 
+  // Animation pour le fade-in
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -79,6 +81,7 @@
     // }
   }
 
+  // Boutons de catégories dans la carte
   &__categories {
     .post-categories {
       display: inline-flex;

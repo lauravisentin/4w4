@@ -7,7 +7,7 @@
         flex-wrap: wrap;
         gap: 15px;
         justify-content: center;
-        padding-left: 20px;
+        padding-left: 20px;  // Espacement à gauche
     }
 
     &__item {
@@ -16,7 +16,7 @@
         padding: 10px 20px;
         max-height: 35px;
         min-width: 165px;
-        max-width:165px;
+        max-width: 165px;
         border-radius: 5px;
         cursor: pointer;
         text-align: center;
@@ -24,19 +24,19 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         text-transform: uppercase;
         transition: all 0.3s ease;
-        flex: 1 1 45%;
+        flex: 1 1 45%; 
         max-width: 45%; 
 
         &:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; 
         }
     }
 
     &__menu {
-        width: 100vw;
+        width: 100vw; 
     }
 
-
+    // Média query pour grands écrans
     @media (min-width: 1106px) {
         &__list {
             justify-content: flex-start;
@@ -49,10 +49,10 @@
         }
     }
 
-
+    // Média query pour écrans moyens
     @media (max-width: 1105px) {
         &__list {
-            justify-content: space-between;
+            justify-content: space-between
         }
 
         &__item {
@@ -64,6 +64,7 @@
         }
     }
 
+    // Média query pour petits écrans
     @media (max-width: 768px) {
         &__item {
             flex: 1 1 45%;
@@ -74,6 +75,7 @@
         }
     }
 
+    // Média query pour très petits écrans
     @media (max-width: 480px) {
         &__item {
             flex: 1 1 45%;
@@ -85,9 +87,7 @@
     }
 }
 
-
-
-
+// Destinations style accordéon
 .destination {
     &__list {
         display: grid;
@@ -95,7 +95,8 @@
         gap: 20px;
         padding: 20px;
         margin-top: 20px;
-        z-index:100;
+        z-index: 100;
+        position: relative;
     }
 
     &__item {
@@ -149,6 +150,7 @@
         transition: max-height 0.5s ease-out;
     }
 
+    // Lien voir plus (page de destination)
     &__link {
         display: inline-block;
         margin-top: 10px;
@@ -157,7 +159,7 @@
         text-decoration: none;
 
         &:hover {
-            text-decoration: underline;
+            text-decoration: underline; 
         }
     }
 }
