@@ -4,33 +4,89 @@
         padding: 20px;
         margin: 0;
         display: flex;
+        flex-wrap: wrap;
         gap: 15px;
         justify-content: center;
         padding-left: 20px;
-
-        
     }
+
     &__item {
-            background-color: $bleu;
-            color: white;
-            padding: 10px 20px;
-            max-height: 35px;
-            min-width: 165px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-transform: uppercase;
-    
-            &:hover {
-                background-color: #0056b3;
-            }
+        background-color: $bleu;
+        color: white;
+        padding: 10px 20px;
+        max-height: 35px;
+        min-width: 165px;
+        max-width:165px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        flex: 1 1 45%;
+        max-width: 45%; 
+
+        &:hover {
+            background-color: #0056b3;
         }
-    &__menu{
-        width:100vw;
+    }
+
+    &__menu {
+        width: 100vw;
+    }
+
+
+    @media (min-width: 1106px) {
+        &__list {
+            justify-content: flex-start;
+        }
+
+        &__item {
+            flex: 1;
+            min-width: 165px;
+            max-width: 165px;
+        }
+    }
+
+
+    @media (max-width: 1105px) {
+        &__list {
+            justify-content: space-between;
+        }
+
+        &__item {
+            flex: 1 1 45%;
+            min-width: 140px;
+            font-size: 14px;
+            padding: 8px 15px;
+            max-width: 45%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__item {
+            flex: 1 1 45%;
+            min-width: 120px;
+            padding: 6px 12px;
+            font-size: 12px;
+            max-width: 45%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__item {
+            flex: 1 1 45%;
+            min-width: 100px;
+            padding: 5px 10px;
+            font-size: 10px;
+            max-width: 45%; 
+        }
     }
 }
+
+
+
 
 .destination {
     &__list {
@@ -97,7 +153,7 @@
         display: inline-block;
         margin-top: 10px;
         font-size: 14px;
-        color: #007BFF;
+        color: $bleu;
         text-decoration: none;
 
         &:hover {

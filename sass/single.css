@@ -1,18 +1,13 @@
-@charset "UTF-8";
 /* Conteneur principal */
 .populaire {
   display: flex;
 }
-
-/* Article */
-.populaire_article {
+.populaire__article {
   background: #fdfdfd;
   border-radius: 12px;
   padding: 25px;
   min-width: 540px;
 }
-
-/* Titre */
 .populaire__titre {
   font-size: 2em;
   font-weight: bold;
@@ -20,8 +15,6 @@
   text-align: center;
   margin-bottom: 20px;
 }
-
-/* Contenu */
 .populaire__contenu {
   display: flex;
   align-items: center;
@@ -29,15 +22,12 @@
   gap: 30px;
   flex-wrap: wrap;
 }
-
 .populaire__image img {
   min-width: 100%;
   height: auto;
   object-fit: cover;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
-
-/* Description */
 .populaire__description {
   flex: 2;
   min-width: 600px;
@@ -45,8 +35,6 @@
   color: #333;
   line-height: 1.6;
 }
-
-/* Section Températures */
 .populaire__temp {
   flex: 1;
   max-width: 55%;
@@ -56,7 +44,6 @@
   gap: 10px;
   align-items: flex-start;
 }
-
 .populaire__temp-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -64,17 +51,14 @@
   margin-bottom: 15px;
   padding-top: 0px;
 }
-
-/* Températures */
 .populaire__temp p {
   font-size: 1.1rem;
   color: #333;
   margin: 5px 0;
 }
-
 .populaire__temp p strong {
   font-weight: bold;
-  color: #0066cc; /* Remplacez $bleu par une couleur valide */
+  color: #0066cc;
 }
 
 /* Responsive */
@@ -96,7 +80,6 @@
   .populaire__description {
     min-width: 400px;
   }
-  /* Températures en ligne sur mobile */
   .populaire__temp {
     margin: 0;
     padding: 0;
@@ -109,7 +92,7 @@
   }
   .populaire__temp p {
     display: inline-block;
-    margin-right: 15px; /* Ajout d'espace entre les températures */
+    margin-right: 15px;
   }
 }
 @media (max-width: 1345px) {
@@ -132,6 +115,6 @@
   }
   .populaire__temp p {
     display: inline-block;
-    margin-right: 15px; /* Ajout d'espace entre les températures */
+    margin-right: 15px;
   }
 }/*# sourceMappingURL=single.css.map */
