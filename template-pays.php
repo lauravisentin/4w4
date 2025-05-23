@@ -4,11 +4,11 @@ Template Name: Modele Pays
 */
 get_header();
 
-$bleu = '#00A3E0';
-$orange= '#FF6A13';
+$rose = '#DEB6DB';
+$orange= '#E4AE63';
 
-genere_vague($orange, 'vague-haut');
-genere_vague($bleu, 'vague-bas');
+genere_vague($rose, 'vague-haut', '1400px');
+genere_vague($orange, 'vague-bas', '900px');
 
 ?>
 <div class="boiteflex global pays">
@@ -18,6 +18,6 @@ genere_vague($bleu, 'vague-bas');
     </section>
     <?php pays_liste('pays'); ?>
     <div class="destination__list"></div>
-
- 
 </div>
+
+<?php get_footer(); ?>

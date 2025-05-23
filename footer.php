@@ -6,8 +6,8 @@
         $footer_couleur = get_theme_mod('footer_couleur', '#81d4ff');
 
 
-        $bleu = '#00A3E0';
-        genere_vague($bleu, 'vague-bas');
+        $bleu= '#81d4ffff';
+        genere_vague($bleu, 'vague-footer', '900px');
     ?>
 
     <!-- <div class="piedpage global"> -->
