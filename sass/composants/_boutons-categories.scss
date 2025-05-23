@@ -60,7 +60,7 @@
             min-width: 140px;
             font-size: 14px;
             padding: 8px 15px;
-            max-width: 45%;
+            max-width: 165px;
         }
     }
 
@@ -71,7 +71,7 @@
             min-width: 120px;
             padding: 6px 12px;
             font-size: 12px;
-            max-width: 45%;
+            max-width: 165px;
         }
     }
 
@@ -101,7 +101,7 @@
 
     &__item {
         padding: 20px;
-        background-color: transparent;
+        background-color: white;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
