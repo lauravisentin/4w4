@@ -6,8 +6,12 @@ get_header();
 ?>
 <div class="boiteflex global pays">
     <h1><?php the_title(); ?></h1>
-    <p>Moment : <?php the_field('Temps'); ?></p>
     <?php pays_liste('pays'); ?>
-    <div class="destination__list"></div>
+    <section class="destination">
+        <div class="destination__list"></div>
+    </section>
+    <section class="gallery">
+        <?php the_content(); ?>
+    </section>
  
 </div>

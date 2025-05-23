@@ -1,11 +1,11 @@
 (function() {
     // 1. Définition de la catégorie par défaut et récupération de l'URL de base
-    let categoryId = 3;  // ID de la catégorie par défaut
+    let categoryId = 20;  // ID de la catégorie par défaut
     const domaine = document.querySelector('base').href;  // Récupérer l'URL de base du site
     let selectedIcon = null; 
 
-    parcourir_bouton();
-    mon_fetch(categoryId);  
+    mon_fetch(categoryId);
+    parcourir_bouton();   
 
     // Fonction pour ajouter un événement de clic sur chaque élément de catégorie
     function parcourir_bouton() {
@@ -15,20 +15,24 @@
         // 4. Ajout d'un événement 'mousedown' sur chaque élément de catégorie
         categorie__ul__li.forEach(elm => {
             elm.addEventListener('mousedown', function() {
-                mon_fetch(elm.dataset.category_id);  
+                mon_fetch(elm.dataset.category_id);
             });
         });
     }
 
     // Fonction pour récupérer les articles à partir de l'API selon l'ID de la catégorie
     function mon_fetch(id_category) {
+        console.log(`Chargement des articles pour la catégorie ${id_category}`);
+
         // 5. Construction de l'URL de l'API avec l'ID de catégorie
-        const apiUrl = `${domaine}wp-json/wp/v2/posts?search=${id_category}`;
+        const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${id_category}`;
 
         // 6. Faire la requête à l'API
         fetch(apiUrl)
             .then(response => response.json())  // Convertir la réponse en JSON
             .then(data => {
+                console.log('Données récupérées :', data);
+
                 // 7. Sélectionner la liste où les articles seront ajoutés
                 // ajouter data methode = search
                 const destinationList = document.querySelector('.destination__list');
