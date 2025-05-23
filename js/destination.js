@@ -10,7 +10,7 @@
     // Fonction pour ajouter un événement de clic sur chaque élément de catégorie
     function parcourir_bouton() {
         // 3. Sélection des éléments de catégorie dans le DOM
-        const categorie__ul__li = document.querySelectorAll(".categorie__item");
+    const categorie__ul__li = document.querySelectorAll(".pays__item");
 
         // 4. Ajout d'un événement 'mousedown' sur chaque élément de catégorie
         categorie__ul__li.forEach(elm => {
@@ -23,13 +23,14 @@
     // Fonction pour récupérer les articles à partir de l'API selon l'ID de la catégorie
     function mon_fetch(id_category) {
         // 5. Construction de l'URL de l'API avec l'ID de catégorie
-        const apiUrl = `${domaine}wp-json/wp/v2/posts?categories=${id_category}`;
+        const apiUrl = `${domaine}wp-json/wp/v2/posts?search=${id_category}`;
 
         // 6. Faire la requête à l'API
         fetch(apiUrl)
             .then(response => response.json())  // Convertir la réponse en JSON
             .then(data => {
                 // 7. Sélectionner la liste où les articles seront ajoutés
+                // ajouter data methode = search
                 const destinationList = document.querySelector('.destination__list');
                 destinationList.innerHTML = ""; 
 

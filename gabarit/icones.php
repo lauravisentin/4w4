@@ -16,6 +16,7 @@ foreach ($icones as $social) {
     // Vérifie que l'URL et l'image sont définis avant d'afficher l'icône
     if ($url && $icon) {
         echo '<li>';
+        // noopener noreferrer : Empêche la page ouverte (le lien cliqué) d'accéder à la page d'origine via window.opener fait, et en plus empêche le navigateur d'envoyer l'en-tête Referer à la nouvelle page.
         echo '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
         
         // Affichage de l'image de l'icône
