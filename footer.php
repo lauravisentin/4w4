@@ -6,10 +6,8 @@
         $footer_couleur = get_theme_mod('footer_couleur', '#81d4ff');
 
 
-        // Appelle la fonction pour afficher la vague
-        $bleu = "#81d4ff"; 
-        genere_vague($bleu);
-
+        $bleu = '#00A3E0';
+        genere_vague($bleu, 'vague-bas');
     ?>
 
     <!-- <div class="piedpage global"> -->

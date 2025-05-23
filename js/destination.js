@@ -1,6 +1,6 @@
 (function() {
     // 1. Définition de la catégorie par défaut et récupération de l'URL de base
-    let categoryId = 20;  // ID de la catégorie par défaut
+    let categoryId = 18;  // ID de la catégorie par défaut
     const domaine = document.querySelector('base').href;  // Récupérer l'URL de base du site
     let selectedIcon = null; 
 
@@ -10,7 +10,7 @@
     // Fonction pour ajouter un événement de clic sur chaque élément de catégorie
     function parcourir_bouton() {
         // 3. Sélection des éléments de catégorie dans le DOM
-    const categorie__ul__li = document.querySelectorAll(".pays__item");
+        const categorie__ul__li = document.querySelectorAll(".categorie__item");
 
         // 4. Ajout d'un événement 'mousedown' sur chaque élément de catégorie
         categorie__ul__li.forEach(elm => {

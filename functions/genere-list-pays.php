@@ -9,9 +9,9 @@ function pays_liste($parent_slug){
         ));
 
         if (!empty($sous_categories)) {
-            echo '<ul class="pays__list">';
+            echo '<ul class="categorie__list">';
             foreach ($sous_categories as $categorie) {
-                echo '<li data-category_id="' . esc_html($categorie->term_id) . '" class="pays__item">' . esc_html($categorie->name) . '</li>';
+                echo '<li data-category_id="' . esc_html($categorie->term_id) . '" class="categorie__item">' . esc_html($categorie->name) . '</li>';
             }
             echo '</ul>';
         }

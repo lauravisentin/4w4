@@ -340,6 +340,24 @@ Les composants
   text-decoration: underline;
 }
 
+.vague-bas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 0;
+}
+
+.vague-haut {
+  position: absolute;
+  bottom: 30vh;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 0;
+}
+
 /* ///////////////////////
 Les layouts 
 /////////////////////// */
@@ -527,15 +545,6 @@ footer {
     flex-direction: row;
     gap: 0 20px;
   }
-}
-
-.vague {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: auto;
-  z-index: 0;
 }
 
 .hero {
